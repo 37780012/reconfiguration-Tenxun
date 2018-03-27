@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  data-use-rem="750">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="HandheldFriendly" content="true">
+    <title>生日快乐</title>
+  </head>
+  <style>
+    body{width: 100%;font-size: 12px;color: #6e6d6d;background: #e0e8f5;}
+    ul,ol{list-style-type: none;}
+    body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;font-family: "Microsoft YaHei";}
+    h1{display: none;}
+    img{display: block;width: 100%; } 
+    html,body{height: 100%; overflow: hidden;}
+    .hide_slh{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .birthday_1{width: 7.5rem; overflow: hidden;}
+    .bir_1_header{width: 7.5rem; height: 4.15rem; background: url("images/index_bg1.jpg") no-repeat; background-size: 7.5rem; overflow: hidden;}
+    .bir_1_main{width: 7.5rem; height: 9.19rem; background: url("images/index_bg2.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .zf_box{width: 4.63rem; height: 2.55rem; margin: 0 auto 0; overflow: hidden;}
+    .mx_box{width: 1.85rem; overflow: hidden; float: left;}
+    .my_box{width: 1.85rem; overflow: hidden; float: right;}
+    .mx_box img,.my_box img{display: block; width: 1.85rem; border-radius: 50%;}
+    .name_text{width: 100%; color: #000000; font-size: 0.27rem; line-height: 0.5rem; margin-top: 0.2rem; text-align: center;}
+    .lh_box{width: 3.46rem; height: 3.51rem; background: url("images/lh_pic.png") no-repeat; background-size: 3.46rem; margin: 0.1rem auto 0;}
+
+    .lh_box{-webkit-animation:swing 1s 0.5s ease both infinite;}
+    @-webkit-keyframes swing{
+        20%,40%,60%,80%,100%{-webkit-transform-origin:bottom center}
+        20%{-webkit-transform:rotate(15deg)}
+        40%{-webkit-transform:rotate(-10deg)}
+        60%{-webkit-transform:rotate(5deg)}
+        80%{-webkit-transform:rotate(-5deg)}
+        100%{-webkit-transform:rotate(0deg)}
+    }
+    .btn_open{display: block; width: 3.29rem; height: 0.91rem; background: url("images/btn_open.png") no-repeat; background-size: 3.29rem; margin: 0.3rem auto 0;}
+    /*祝福视频*/
+    .zf_video_bg{width: 7.5rem; height: 100%; overflow: hidden;}
+    .zf_video{width: 100%; overflow: hidden;}
+
+    /*落版*/
+    .end_cont{width: 7.5rem; height: 100%; background: url("images/end_bg.jpg") no-repeat; background-size: 7.5rem;}
+    .xy_icon{width: 2.73rem; height: 2.73rem; position: absolute; bottom: 3.32rem; left: 0.25rem; background: url("images/xy_icon.png") no-repeat; background-size: 2.73rem;}
+    .xy_icon{-webkit-animation: xyMove 1s 0s ease both;}
+    @-webkit-keyframes xyMove{
+        0%{opacity:0;
+        -webkit-transform:translateX(-100%) rotate(-120deg)}
+        100%{opacity:1;-webkit-transform:translateX(0px) rotate(0deg)}
+    }
+
+    .btn_again{display: block; width: 2.68rem; height: 0.91rem; position: absolute; bottom: 1.83rem; left: 0.6rem; background: url("images/btn_again.png") no-repeat; background-size: 2.68rem;}
+    .btn_gz{display: block; width: 3.51rem; height: 0.91rem; position: absolute; bottom: 1.83rem; right: 0.58rem; background: url("images/btn_gz.png") no-repeat; background-size: 3.51rem;}
+    .btn_share{display: block; width: 6.3rem; height: 0.91rem; position: absolute; bottom: 0.64rem; left: 0.6rem; background: url("images/btn_share.png") no-repeat; background-size: 6.3rem;}
+    .ht_icon{width: 0.55rem; height: 2.82rem; background: url("images/ht_icon.png") no-repeat; position: absolute; top: 4rem; left: 1.2rem; background-size: 0.55rem;}
+    .ht_icon{-webkit-animation: htMove 1s 0s ease both infinite;}
+    @-webkit-keyframes htMove{
+        0%{opacity:0;}
+        50%{opacity:1;}
+        100%{opacity:0;}
+    }
+
+
+
+  </style>
+  <body>
+    <!-- 打开生日礼物 S -->
+    <div class="birthday_1" id="birthdayOpen">
+        <div class="bir_1_header"></div>
+        <div class="bir_1_main">
+            <div class="zf_box">
+                <div class="mx_box">
+                    <img src="images/mx_pic.png" alt="">
+                    <p class="name_text hide_slh">杨洋</p>
+                </div>
+                <div class="my_box">
+                    <img src="images/my_pic.png" alt="">
+                    <p class="name_text hide_slh">圆我小狗冠军梦</p>
+                </div>
+            </div>
+            <div class="lh_box"></div>
+            <a href="javascript:;" class="btn_open" id="btnOpen"></a>
+        </div>
+    </div>
+    <!-- 打开生日礼物 E -->
+    <!-- 祝福视频 S -->
+    <div class="zf_video_bg" id="zfVideoBg" style="display:none">
+        <video src="http://d3g.qq.com/sngapp/app/update/20170928154200_4655/V3yangyang750x1334.mp4" preload="preload" controls="controls" playsinline webkit-playsinline x5-video-player-type="h5" class="zf_video" id="zfVideo"></video>
+    </div>
+    <!-- 祝福视频 E -->
+    <!-- 落版 S -->
+    <div class="end_cont" id="endCont" style="display:none">
+        <div class="xy_icon"></div>
+        <a href="javascript:;" class="btn_again" id="btnAgain"></a>
+        <a href="https://user.qzone.qq.com/991991000" class="btn_gz"></a>
+        <a href="javascript:;" class="btn_share"></a>
+        <div class="ht_icon"></div>
+    </div>
+    <!-- 落版 E -->
+    
+    <script>
+      (function(win) {
+        var doc = win.document,
+        html = doc.documentElement,
+        option = html.getAttribute('data-use-rem');
+
+        if (option === null) return;
+
+        // defaut baseWidth : 750px；
+        var baseWidth = parseInt(option).toString() == 'NaN' ? 750 : parseInt(option);
+        var grids = baseWidth / 100;
+        var clientWidth = html.clientWidth || 375;
+
+        // set rem first
+        html.style.fontSize = clientWidth / grids + 'px';
+
+        // create testDom
+        var testDom = document.createElement('div');
+        var testDomWidth = 0;
+        var adjustRatio = 0;
+        testDom.style.cssText = 'height:0;width:1rem;';
+        doc.body.appendChild(testDom);
+
+        var calcTestDom = function() {
+            testDomWidth = testDom.offsetWidth;
+            if (testDomWidth !== Math.round(clientWidth / grids)) {
+                adjustRatio = clientWidth / grids / testDomWidth;
+                var reCalcRem = clientWidth * adjustRatio / grids;
+                html.style.fontSize = reCalcRem + 'px';
+            } else {
+                doc.body.removeChild(testDom);
+            }
+        };
+
+        // detect if rem calc is working directly
+        // if not , recalc and set the rem value
+        setTimeout(calcTestDom, 20);
+
+        var reCalc = function() {
+            var newCW = html.clientWidth;
+            if (newCW === clientWidth) return;
+            clientWidth = newCW;
+            html.style.fontSize = newCW * (adjustRatio ? adjustRatio: 1) / grids + 'px';
+            // if( testDom ) setTimeout(calcTestDom, 20);
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+
+        var resizeEvt = 'orientationchange' in win ? 'orientationchange': 'resize';
+
+        win.addEventListener(resizeEvt, reCalc, false);
+        // detect clientWidth is changed ?
+        doc.addEventListener('DOMContentLoaded', reCalc, false);
+    })(window); 
+
+    // 打开礼物
+    var btnOpen = document.getElementById('btnOpen');
+    var zfVideoBg = document.getElementById('zfVideoBg');
+    var zfVideo = document.getElementById('zfVideo');
+    var birthdayOpen = document.getElementById('birthdayOpen');
+    var endCont = document.getElementById('endCont');
+    var btnAgain = document.getElementById('btnAgain');
+    btnOpen.onclick = function(){
+        birthdayOpen.style.display = "none";
+        zfVideoBg.style.display = "block";
+        zfVideo.play();
+    }
+    zfVideo.onended = function() {
+        zfVideo.pause();
+        endCont.style.display = "block";
+        zfVideoBg.style.display = "none";
+    };    
+
+    btnAgain.onclick = function(){
+        endCont.style.display = "none";
+        zfVideoBg.style.display = "block";
+        zfVideo.play();
+    }
+    </script>
+  </body>
+
+</html>

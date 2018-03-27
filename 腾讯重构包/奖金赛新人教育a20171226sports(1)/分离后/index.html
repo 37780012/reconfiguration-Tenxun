@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html style="opacity:0">
+<head>
+    <meta charset="gbk" />
+    <meta name="applicable-device" content="mobile">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="Description" content="" />
+    <link rel="stylesheet" type="text/css" href="//yundong.qq.com/a20171226sports/css/style.css">
+    <script>
+        //屏幕适应
+        (function (win,doc){
+            if (!win.addEventListener) return;
+            var html=document.documentElement;
+            html.style.opacity="0";
+            function setFont() {
+                var html = document.documentElement;
+                var k = 750;
+                html.style.fontSize = html.clientWidth / k * 100 + "px";
+                html.style.opacity="1";
+            }
+            setFont();
+
+            doc.addEventListener("DOMContentLoaded",setFont,false);
+            win.addEventListener("resize",setFont,false);
+            win.addEventListener("load",setFont,false);
+        })(window,document);
+    </script>
+    <title>QQ运动</title>
+    <!-- 设计：CP | 重构：CP | 创建：2017/12/26  -->
+</head>
+<body>
+<div class="wrapper">
+    <div class="swiper-box">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide ">
+                    <div class="secTop">
+                        <p class="sprites qq"></p>
+                        <p class="sprites phone"></p>
+                        <p class="sprites person1"></p>
+                    </div>
+                    <div class="introduct">
+                        <p class="title">比赛中不要进行如下操作</p>
+                        <div class="intro-list list1">
+                            <p>不能重新安装手机QQ</p>
+                            <p>不要使用多个手机记录步数</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="secTop">
+                        <p class="sprites step5000">
+                            <span class="sprites bling"></span>
+                        </p>
+                    </div>
+                    <div class="introduct">
+                        <p class="title">睡前确认比赛达标状态</p>
+                        <div class="intro-list">
+                            <p>需要进入奖金赛首页，确认状态变为已达标，<br>第二天才能获取奖金哦~</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="secTop">
+                        <p class="sprites sun"></p>
+                        <p class="sprites cloud1"></p>
+                        <p class="sprites cloud2"></p>
+                        <p class="sprites person3"></p>
+                    </div>
+                    <div class="introduct ">
+                        <p class="title">顺利出师</p>
+                        <div class="intro-list list3">
+                            <p>别忘了明天来参加比赛哦~</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="secTop">
+                        <p class="sprites heart"></p>
+                        <p class="sprites shoes"></p>
+                    </div>
+                    <div class="introduct ">
+                        <p class="title">无法使用手环和第三方APP来机步</p>
+                        <div class="intro-list">
+                            <p>为了公平公正，只计算来自“机步助手”与<br>“苹果健康”数据源的步数~~</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="secTop">
+                        <p class="sprites step100">
+                            <span class="sprites bling"></span>
+                        </p>
+                    </div>
+                    <div class="introduct ">
+                        <p class="title">每天多关注QQ运动动态</p>
+                        <div class="intro-list">
+                            <p>常来QQ运动看看消息动态，让你的奖金赛<br>步数更新更及时！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <a class="sprites close-btn swiperClose" href="javascript:;"></a>
+    </div>
+
+    <!-- 弹窗 -->
+    <div class="dialog success-dialog ">
+        <div class="content">
+            <p class="sprites icon"></p>
+            <p class="succ-title">成功报名1115期奖金赛</p>
+            <div class="countdown">
+                <div class="countNum">
+                    <span class="days"></span> <span class="hour">0</span>:<span class="minute">0</span>:<span class="second">0</span>
+                </div>
+                开赛倒计时
+            </div>
+            <p class="subscribe">
+                <input type="checkbox" id="subscribe">
+                <label for="subscribe">订阅官方通知</label>
+            </p>
+            <a class="long-btn jsClose" href="javascript:;">查看比赛秘籍</a>
+            <a class="sprites close-btn jsClose" href="javascript:;"></a>
+        </div>
+    </div>
+
+    <div class="dialog fail-dialog none">
+        <div class="content">
+            <p class="sprites icon"></p>
+            <p class="fail-title"> 已退赛</p>
+            <p class="tips">您的行为可能触发了退赛流程，<br>运动契约金将于24小时内返还至的QQ钱包</p>
+            <a class="long-btn" href="javascript:;">查看比赛秘籍</a>
+            <a class="view-rule jsClose" href="javascript:;">查看详情</a>
+            <a class="sprites close-btn jsClose" href="javascript:;"></a>
+        </div>
+    </div>
+</div>
+<script src="//yundong.qq.com/a20171226sports/js/swiper.min.js"></script>
+<script>
+window.onload = function () {
+    //  倒计时
+    var countDownTmer = null ,
+        daysH = document.querySelector(".days"),
+        hourH = document.querySelector(".hour"),
+        minH = document.querySelector(".minute"),
+        secondH = document.querySelector(".second");
+    function countDown() {
+        var startTime = new Date("2018/01/01 10:00:00"),
+            today = new Date(),
+            total = ( startTime.getTime()  - today.getTime() )/1000;  //  相差的秒数
+
+        var days = parseInt( total / 60 / 60 / 24 , 10); //计算剩余的天数
+        var hour =  Math.floor(total/60/60%24);//  大于24h的时间
+        var min = Math.floor(total/60%60);//计算整数分
+        var second = Math.floor(total%60);//取得算出分后剩余的秒数
+
+        if( days > 0 ){  daysH.innerHTML = days+"天" ; }
+        hourH.innerHTML = hour ;
+        minH.innerHTML = min ;
+        secondH.innerHTML = second ;
+
+        countDownTmer = setInterval(  countDown , 1000 )
+    }
+    countDown();
+
+    var swiper = null ;
+
+    //  点击关闭  运行swiper组件
+    var jsClose = document.querySelectorAll(".jsClose"),
+        dialog = document.querySelectorAll(".dialog");
+    for( var i = 0 ; i < jsClose.length ; i++ ){
+        jsClose[i].addEventListener("touchend",function () {
+            for( var j = 0 ; j < dialog.length ; j++ ) {
+                dialog[j].style.display = "none";
+            }
+            //  关闭弹窗
+            if( swiper === null ){
+                swiper = new Swiper(".swiper-container", {
+                    pagination: {
+                        el : ".swiper-pagination",
+                        clickable : true
+                    },
+                    //initialSlide: 3,  指定滑动第几页
+                    loop:false,
+                    autoplay:3000,
+                    speed:600,
+                    autoplayDisableOnInteraction:false,
+                    on:{
+                        reachEnd: function(){
+                            document.querySelector(".swiperClose").style.display = "block";
+                        }
+                    }
+                });
+            }
+        })
+    }
+
+
+}
+</script>
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script>
+    var setSite={
+        siteType:"a20171226sports",
+        pageType:"index",
+        pageName:"首页"
+    }
+    if(typeof(pgvMain)=='function')pgvMain();
+</script>
+</body>
+</html>

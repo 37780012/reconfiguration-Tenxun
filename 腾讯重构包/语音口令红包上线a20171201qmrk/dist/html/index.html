@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  data-use-rem="750">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>全民绕口令时代降临</title>
+  </head>
+  <body>
+    <div class="bg1">
+        <div class="pg_tl"></div>
+    </div>
+    <div class="bg2">
+        <div class="m1_g sp"></div>
+        <div class="yy_bg sp">
+            <div class="yy_icon sp"></div>
+        </div>
+    </div>
+    <div class="bg3">
+        <div class="slh_icon sp"></div>
+        <div class="hy_icon sp"></div>
+        <div class="hb_1 sp"></div>
+        <div class="hb_2 sp"></div>
+        <div class="hb_3 sp"></div>
+        <div class="hb_peo sp"></div>
+    </div>
+    <div class="bg4">
+        <a href="javascript:;" class="btn_fhb"></a>
+        <p class="e4_ts">安装手机QQ最新7.3.0版本才可以玩哦<br /> 目前暂未支持单人聊天请在群里玩哦~</p>
+    </div>
+    <div class="bg5">
+        <ul class="e5_tx_list" id="e5_tx_list">
+            <li class="e5_li1 sp">黑灰化肥灰会挥发发灰黑讳为黑灰花会飞</li>
+            <li class="e5_li2 sp">六牛郎恋刘娘刘娘念牛郎牛郎牛年恋刘娘</li>
+            <li class="e5_li3 sp">露娜拿蓝难不拿蓝难娜可露露帮露娜拿蓝</li>
+            <li class="e5_li4 sp">发废话会花话费回发废话话费发发废话花</li>
+            <li class="e5_li5 sp">李缕缕的红鲤鱼与吕里里的绿鲤鱼比红绿</li>
+            <li class="e5_li6 sp">刘奶奶说牛奶奶榴莲牛奶不如柳奶奶榴莲</li>
+        </ul>
+        <ul class="e5_btn_box" id="e5_btn_box">
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+            <li>
+                <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+            </li>
+        </ul>
+        <div class="share_box">
+            <!-- 未分享关闭状态 S -->
+            <div class="share_no" style="display:none">
+                <div class="share_no_pic"></div>
+                <p class="share_no_text"><span></span>分享页面解锁神秘口令</p>
+                <p class="share_no_text2">挑战好友心理承受极限<span></span></p>
+            </div>
+            <!-- 未分享关闭状态 E -->
+            <!-- 分享打开状态 S -->
+            <div class="share_open" style="display:">
+                <ul class="share_tx_list" id="share_tx_list">
+                    <li class="">小拳拳捶你胸口人家就是要红包嘛嘤嘤嘤</li>
+                    <li class="">全世界只有人家最可爱哼人家不理你了啦</li>
+                </ul>
+                <ul class="share_btn_list" id="share_btn_list">
+                    <li>
+                        <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="copy_btn sp" data-clipboard-text=""></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 分享打开状态 E -->
+        </div>
+        <a href="javascript:;" class="btn_share sp"></a>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+      (function(win) {
+        var doc = win.document,
+        html = doc.documentElement,
+        option = html.getAttribute('data-use-rem');
+
+        if (option === null) return;
+
+        // defaut baseWidth : 750px；
+        var baseWidth = parseInt(option).toString() == 'NaN' ? 750 : parseInt(option);
+        var grids = baseWidth / 100;
+        var clientWidth = html.clientWidth || 375;
+
+        // set rem first
+        html.style.fontSize = clientWidth / grids + 'px';
+
+        // create testDom
+        var testDom = document.createElement('div');
+        var testDomWidth = 0;
+        var adjustRatio = 0;
+        testDom.style.cssText = 'height:0;width:1rem;';
+        doc.body.appendChild(testDom);
+
+        var calcTestDom = function() {
+            testDomWidth = testDom.offsetWidth;
+            if (testDomWidth !== Math.round(clientWidth / grids)) {
+                adjustRatio = clientWidth / grids / testDomWidth;
+                var reCalcRem = clientWidth * adjustRatio / grids;
+                html.style.fontSize = reCalcRem + 'px';
+            } else {
+                doc.body.removeChild(testDom);
+            }
+        };
+
+        // detect if rem calc is working directly
+        // if not , recalc and set the rem value
+        setTimeout(calcTestDom, 20);
+
+        var reCalc = function() {
+            var newCW = html.clientWidth;
+            if (newCW === clientWidth) return;
+            clientWidth = newCW;
+            html.style.fontSize = newCW * (adjustRatio ? adjustRatio: 1) / grids + 'px';
+            // if( testDom ) setTimeout(calcTestDom, 20);
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+
+        var resizeEvt = 'orientationchange' in win ? 'orientationchange': 'resize';
+
+        win.addEventListener(resizeEvt, reCalc, false);
+        // detect clientWidth is changed ?
+        doc.addEventListener('DOMContentLoaded', reCalc, false);
+    })(window); 
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  data-use-rem="750">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="HandheldFriendly" content="true">
+    <title>咸甜争霸赛</title>
+  </head>
+  <style>
+    body{width: 100%;font-size: 12px;color: #6e6d6d;background: #5e2798;}
+    ul,ol{list-style-type: none;}
+    body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;font-family: "Microsoft YaHei";}
+    h1{display: none;}
+    img{display: block;width: 100%; } 
+    .hide_slh{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .header{width: 7.5rem; height: 4.06rem; background: url("images/hd_bg.jpg") no-repeat; background-size: 7.5rem;}
+    .hd_animation{width: 7.5rem; height: 4.06rem; background: url("images/hd.gif") no-repeat; background-size: 7.5rem;}
+    .even1{width: 7.5rem; height: 8.24rem; background: url("images/even1.jpg") no-repeat; background-size: 7.5rem;}
+    .e1_p1{width: 6.72rem; height: 0.77rem; margin: 0 auto 0; color: #ffe9e9; line-height: 0.32rem; font-size: 0.22rem; padding-top: 0.05rem;}
+    .btn_rule{float: right; color: #fff44a; font-size: 0.22rem; text-decoration: underline; margin-right: 0.08rem;}
+    .e1_dj_box{width: 7.08rem; height: 1.64rem; margin: 0.96rem auto 0;}
+    .e1_dj_cont{width: 3.47rem; height: 1.64rem; background: url("images/e1_dj_bg.png") no-repeat; background-size: 3.47rem; overflow: hidden;}
+    .f_left{float: left;}
+    .f_right{float: right;}
+    .e1_dj_pic1,.e1_dj_pic2{width: 100%; height: 1.07rem; margin-top: 0.04rem; overflow: hidden;}
+    .e1_dj_pic1 img{display: block; width: 0.88rem; height: 0.95rem; margin: 0.1rem auto 0;}
+    .e1_dj_pic2 img{display: block; width: 0.9rem; height: 0.87rem; margin: 0.11rem auto 0;}
+    .e1_dj_text{width: 100%; height: 0.5rem; text-align: center; line-height: 0.5rem; font-size: 0.22rem; color: #fff;}
+    .e1_dj_text span{color: #ffe27e; font-weight: bold; margin-right: 0.1rem;}
+    /*主播*/
+    .e1_zb{width: 7rem; height: 1.82rem; margin: 0.12rem auto 0; overflow: hidden;}
+    .e1_zb_photo{width: 1.62rem; height: 1.62rem; float: left; margin: 0.08rem 0 0 0.82rem; position: relative;}
+    .e1_zb_photo img{display: block; width: 1.52rem; height: 1.52rem; border: 0.06rem solid #f3a362; overflow: hidden; border-radius: 50%;}
+    .zb_icon{display: block; width: 1.48rem; height: 0.31rem; background: url("images/zb_icon.png") no-repeat; position: absolute; bottom: 0.02rem; left: 50%; margin-left: -0.73rem; background-size: 1.48rem; text-align: center; line-height: 0.31rem; color: #cd2e2d; font-size: 0.2rem;}
+    .zb_info{width: 3.58rem; overflow: hidden; float: left; margin-left: 0.96rem;}
+    .e1_zb_text{width: 100%; color: #ffffff; font-size: 0.24rem; line-height: 0.46rem; }
+    .e1_zb_text span{display: block; width: 1.23rem; float: left; text-align: right; color: #ffe191; font-size: 0.24rem;}
+    .mt-20{margin-top: 0.2rem;}
+    .fs_box{width: 7rem; height: 2.66rem; margin: 0 auto 0; position: relative;}
+    .fs_icon{width: 0.5rem; height: 1.43rem; background: url("images/fs_icon.png") no-repeat; position: absolute; top: -0.08rem; left: 0.06rem; background-size: 0.5rem; }
+    .fs_icon span{display: block; width: 0.3rem; overflow: hidden; color: #cd2e2d; font-size: 0.22rem; font-weight: bold; text-align: center; margin: 0.55rem auto 0; line-height: 0.25rem;}
+    .fs_list_bg{width: 6.2rem; height: 1.9rem; margin: 0 0 0 0.56rem; padding-top: 0.32rem; overflow-x: scroll; overflow-y: hidden;}
+    .fs_list_bg::-webkit-scrollbar{width: 0px;}
+    .fs_list{ height: 1.9rem; overflow: hidden;}
+    .fs_list li{width: 1.25rem; height: 1.9rem; float: left;}
+    .fs_photo{width: 0.82rem; height: 0.82rem; border: 0.05rem solid #f3a362; border-radius: 50%; margin: 0 auto 0; position: relative;}
+    .fs_pm{display: block; width: 0.26rem; height: 0.26rem; background-color: #fee053; font-size: 0.18rem; text-align: center; line-height: 0.26rem; color: #a02724; position: absolute; top: 0rem; right: 0px; border-radius: 50%;}
+    .fs_name{width: 100%; color: #ffe191; line-height: 0.25rem; font-size: 0.2rem; text-align: center; margin-top: 0.1rem;}
+    .fs_gx{width: 100%; color: #ffb368; line-height: 0.25rem; font-size: 0.2rem; text-align: center;}
+    .fs_num{width: 100%; color: #fff; line-height: 0.25rem; font-size: 0.2rem; text-align: center;}
+    .fs_box_ts{display: inline-block; color: #f3a9a8; font-size: 0.18rem; position: absolute; top: 0px; right: 0.1rem; padding-right: 0.25rem; }
+    .fs_box_ts:before{content: ""; width: 0; height: 0; border-left:0.1rem solid transparent; border-right:0.1rem solid transparent; border-top:0.1rem solid #f3a9a8; position: absolute; top: 0.07rem; right: 0px;}
+    .gx_phb{width: 4.93rem; height: 0.35rem; margin: 0 auto 0;}
+    .gx_me{width: 2.05rem; height: 0.35rem; background-color: #b92724; border-radius: 0.05rem; color: #ffe191; font-size: 0.2rem; text-align: center; line-height: 0.35rem;}
+    .gx_me span{color: #fff;}
+    /*even2*/
+    .even2{width: 7.5rem; height: 9.88rem; background: url("images/even2.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .e2_title{width: 100%; color: #ffffff; font-size: 0.22rem; text-align: center; line-height: 0.5rem; margin-top: 0.88rem; font-weight: bold;}
+    .e2_jd_bg{width: 6.58rem; height: 0.54rem; background-color: #f14d4a;  border-radius: 0.5rem; border: 0.04rem solid #7f0c0c; margin: 0 auto 0; position: relative; overflow: hidden;}
+    .e2_jd2{width: 6.48rem; height: 0.54rem; position: absolute; top: 0px; left: 0px; text-align: right; font-size: 0.3rem; color: #ffe191; font-weight: bold; padding-right: 0.1rem; line-height: 0.54rem;}
+    .e2_jd1{height: 0.54rem; position: absolute; top: 0px; left: 0px; line-height: 0.54rem; color: #b32825; font-size: 0.3rem; font-weight: bold; text-indent: 0.1rem; background-color: #f4a242; z-index: 2;}
+    .pb_box{width: 7rem; height: 7.53rem; border: 0.04rem solid #7f0c0c; margin: 0.14rem auto 0; border-radius: 0.2rem;}
+    .tab_btn{width: 6.7rem; height: 0.92rem; margin: 0.1rem auto 0; overflow: hidden;}
+    .tab_btn1{display: block; width: 3.35rem; height: 0.92rem; background: url("images/tab_btn_sp.png") 0 0 no-repeat; background-size: 6.7rem; float: left; }
+    .tab_btn2{display: block; width: 3.35rem; height: 0.92rem; background: url("images/tab_btn_sp.png") -3.35rem -0.95rem no-repeat; background-size: 6.7rem; float: left; }
+    .tab_btn1_on{display: block; width: 3.35rem; height: 0.92rem; background: url("images/tab_btn_sp.png") 0 -0.95rem no-repeat; background-size: 6.7rem; float: left; }
+    .tab_btn2_on{display: block; width: 3.35rem; height: 0.92rem; background: url("images/tab_btn_sp.png") -3.35rem 0rem no-repeat; background-size: 6.7rem; float: left; }
+    .tab_box{width: 6.7rem; height: 6.32rem; margin: 0.1rem auto 0; border-radius: 0.2rem; overflow: hidden;}
+    .tab_box1{width: 6.7rem; height: 6.32rem; overflow: hidden;}
+    .tab_box_dh{width: 100%; height: 0.5rem; background-color: #e23335; }
+    .tab_box_dh span{color: #fff; font-size: 0.22rem; line-height: 0.5rem; text-align: center; display: block; float: left; height: 100%; position: relative;}
+    .tab_box_dh span:after{content: ""; display: block; width: 0.04rem; height: 0.3rem; background-color: #fa4d4f; position: absolute; top: 0.08rem; right: -0.02rem; z-index: 3;}
+    .tab_box_dh span:last-child:after{display: none;}
+    .tab_hd_s1{width: 1.2rem;}
+    .tab_hd_s2{width: 3.08rem;}
+    .tab_hd_s3{width: 2.34rem;}
+    .tab_list{width: 100%; overflow: hidden;}
+    .tab_list li{width: 100%; height: 0.97rem; overflow: hidden;}
+    .tab_list li p{color: #4b2117; font-size: 0.24rem; line-height: 0.97rem; text-align: center; display: block; float: left; height: 100%; position: relative;}
+    .tab_list li:nth-child(odd){background-color: #ee383a}
+    .tab_list li:nth-child(even){background-color: #f54446}
+    .pb_photo{display: block; width: 0.64rem; height: 0.64rem; border: 0.05rem solid #aa2727; border-radius: 50%; margin-top: 0.15rem; float: left;}
+    .zbz_icon{display: inline-block; min-width: 0.74rem; height: 0.29rem; background-color: #fee155; color: #7f0c0c; font-size: 0.18rem; text-align: center; line-height: 0.29rem; position: absolute; top: 0.06rem; left: 0.49rem; border-radius: 0.5rem;}
+    .tab_hd_name{display: block; width: 1.8rem; height: 100%; color: #4b2117; font-size: 0.24rem; float: left; margin-left: 0.18rem; text-align: left; line-height: 1.2rem;}
+ 
+    /*even3*/
+    .even3{width: 7.5rem; height: 7.68rem; background: url("images/even3.jpg") no-repeat; background-size: 7.5rem; overflow: hidden;}
+    
+    .e3_cont{width: 7rem; height: 1.4rem; overflow: hidden; margin: 0.12rem auto 0;}
+    .e3_cont_p1{width: 100%; height: 0.5rem; color: #f6f6ff; font-size: 0.22rem; text-align: center; line-height: 0.5rem;}
+    .e3_cont_p1 span{color: #ffe191;}
+    .e3_cont_list{width: 100%; height: 0.91rem; margin: 0 auto 0; overflow: hidden; text-align: center;}
+    .e3_cont_list li{display: inline-block; width: 2.27rem; height: 0.91rem; background: url("images/e3_list_bg.png") no-repeat;  float: left; margin-right: 0.08rem; background-size: 2.27rem;}
+    .e3_cont_list li:last-child{margin-right: 0;}
+    .e3_icon_hand{width: 0.46rem; height: 0.49rem; background: url("images/e3_icon_hand.png") no-repeat; float: left; margin: 0.19rem 0.12rem 0 0.28rem; background-size: 0.46rem;}
+    .e3_icon_lw{width: 0.39rem; height: 0.39rem; background: url("images/e3_icon_lw.png") no-repeat; float: left; margin: 0.27rem 0.14rem 0 0.3rem; background-size: 0.39rem;}
+    .e3_text{width: 1.34rem; overflow: hidden; float: left;}
+    .e3_t1{display: block; width: 100%; color: #ffffff; font-size: 0.2rem; line-height: 0.26rem; margin-top: 0.2rem; text-align: left;}
+    .e3_t2{display: block; width: 100%; color: #ffe191; font-size: 0.2rem; line-height: 0.26rem; text-align: left;}
+    .e3_text2{width: 100%; overflow: hidden; float: left;}
+    .e3_text2 .e3_t1{text-align: center;}
+    .e3_text2 .e3_t2{text-align: center;}
+    .e3_cont_list .e3_cont_list_li2{margin-left: 0.98rem;}
+    .e3_ts{width: 6.72rem; height: 0.5rem; text-align: center; line-height: 0.5rem; color: #ffa3a1; font-size: 0.2rem; margin: 0.1rem auto 0;}
+
+    .mt_98{margin-top: 0.96rem;}
+    /*even4*/
+    .even4{width: 7.5rem; height: 10.34rem; background: url("images/even4.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; }
+    .e4_list{width: 6.5rem; height: 3.9rem; overflow: hidden; margin: 1.09rem auto 0;}
+    .e4_list li{width: 100%; height: 0.97rem; overflow: hidden;}
+    .e4_p1{width: 4rem; height: 100%; color: #f6f6ff; font-size: 0.22rem; line-height: 0.25rem; float: left; padding-top: 0.25rem;}
+    .e4_p2{width: 4rem; height: 100%; color: #f6f6ff; font-size: 0.22rem; line-height: 0.97rem; float: left;}
+    .e4_p2 span{color: #ffe191;}
+    .e4_ch1{display: block; width: 1.93rem; height: 0.71rem; float: left; float: right; margin-top: 0.12rem;}
+    .e4_ch2{display: block; width: 1.93rem; height: 0.71rem; float: left; float: right; margin-top: 0.12rem;}
+    .e4_ch3{display: block; width: 1.93rem; height: 0.71rem; float: left; float: right; margin-top: 0.12rem;}
+    .e4_ch4{display: block; width: 1.93rem; height: 0.71rem; float: left; float: right; margin-top: 0.12rem;}
+
+    .rule_list{width: 6.86rem; height: 3.9rem; overflow: hidden; margin: 0.9rem auto 0;}
+    .rule_list li{width: 100%; overflow: hidden; margin-bottom: 0.1rem;}
+    .rule_s1{display: block; width: 0.25rem; height: 0.25rem; background-color: #9e2b29; font-size: 0.18rem; color: #f38684; text-align: center; line-height: 0.25rem; float: left; margin: 0 0.1rem 0 0; border-radius: 50%;}
+    .rule_s2{display: block; width: 6.5rem; float: left; color: #ffa8a6; font-size: 0.18rem; float: left; line-height: 0.25rem;}
+    .lk_text{width: 100%; height: 0.6rem; color: #ffffff; font-size: 0.26rem; text-align: center; line-height: 0.6rem;}
+    .vs_icon{display: block; width: 0.75rem; height: 0.75rem; background: url("images/vs_icon.png") no-repeat; position: absolute; top: 2.34rem; left: 50%; margin-left: -0.38rem; background-size: 0.75rem; pointer-events: none;}
+
+
+  </style>
+  <body>
+    <div class="main">
+        <div class="header">
+            <div class="hd_animation"></div>
+        </div>
+        <div class="even1">
+            <p class="e1_p1">自古咸甜多党争，活动期间主播们将会代表不同月饼阵营，两方展开   "咸甜争霸",  守护自己的月饼信仰。<a href="javascript:;" class="btn_rule" data-to="goRule">活动规则>></a></p>
+            <div class="e1_dj_box">
+                <div class="e1_dj_cont f_left">
+                    <div class="e1_dj_pic1">
+                        <img src="images/e1_dj1.png" alt="">
+                    </div>
+                    <p class="e1_dj_text">
+                        <span>月饼</span>
+                        +1信仰值
+                    </p>
+                </div>
+                <div class="e1_dj_cont f_right">
+                    <div class="e1_dj_pic2">
+                        <img src="images/e1_dj2.png" alt="">
+                    </div>
+                    <p class="e1_dj_text">
+                        <span>至尊王者</span>
+                        +25000 信仰值
+                    </p>
+                </div>
+            </div> 
+            <!-- 主播 S -->      
+            <div class="e1_zb">
+                <div class="e1_zb_photo">
+                    <img src="images/zb_photo.png" alt="">
+                    <span class="zb_icon">甜党派</span> 
+                </div>
+                <div class="zb_info">
+                    <p class="e1_zb_text hide_slh mt-20"><span>主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;播：</span>韩跑跑爱吃月饼韩跑跑爱吃月饼</p>
+                    <p class="e1_zb_text hide_slh"><span>信&nbsp;&nbsp;仰&nbsp;值：</span>123456</p>
+                    <p class="e1_zb_text hide_slh"><span>当前排行：</span>1</p>
+                </div>
+            </div>
+            <!-- 主播 E -->      
+            <!-- 粉丝 S -->      
+            <div class="fs_box">
+                <div class="fs_icon"><span>甜家军</span></div>
+                <div class="fs_box_ts">
+                    滑动查看更多
+                </div>
+                <div class="fs_list_bg">
+                    <ul class="fs_list" id="fsList">
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">1</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">2</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">3</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">4</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">5</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">6</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">7</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                        <li>
+                            <div class="fs_photo">
+                                <img src="images/fs_photo.png" alt="">
+                                <span class="fs_pm">8</span>
+                            </div>
+                            <p class="fs_name hide_slh">粉丝昵称粉</p>
+                            <p class="fs_gx hide_slh">贡献值</p>
+                            <p class="fs_num hide_slh">1234</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="gx_phb">
+                    <div class="gx_me f_left">我丨贡献值：<span>0</span> </div>
+                    <div class="gx_me f_right">当前排行：<span>未上榜</span> </div>
+                </div>
+            </div>
+            <!-- 粉丝 S -->      
+        </div>
+        <div class="even2">
+            <p class="e2_title">信仰总值</p>
+            <!-- 进度条 -->
+            <div class="e2_jd_bg">
+                <div class="e2_jd1" style="width:50%">2333333</div>
+                <div class="e2_jd2">6666666</div>
+            </div>
+            <!-- 切换内容 S -->
+            <div class="pb_box">
+                <span class="vs_icon"></span>
+                <div class="tab_btn" id="e1TabBtn">
+                    <a href="javascript:;" class="tab_btn1_on"></a>
+                    <a href="javascript:;" class="tab_btn2"></a>
+                </div>
+                <div class="tab_box" id="e1TabBox">
+                    <div class="tab_box1">
+                        <div class="tab_box_dh">
+                            <span class="tab_hd_s1">排 行</span>
+                            <span class="tab_hd_s2">主播名</span>
+                            <span class="tab_hd_s3">信仰值</span>
+                        </div>
+                        <ul class="tab_list">
+                            <li>
+                                <p class="tab_hd_s1">1</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">2</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">3</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">4</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">5</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">6</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_box1" style="display:none">
+                        <div class="tab_box_dh">
+                            <span class="tab_hd_s1">排 行</span>
+                            <span class="tab_hd_s2">主播名</span>
+                            <span class="tab_hd_s3">信仰值</span>
+                        </div>
+                        <ul class="tab_list">
+                            <li>
+                                <p class="tab_hd_s1">1</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵22222222222222222222222222222</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">2</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">3</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">4</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">5</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                            <li>
+                                <p class="tab_hd_s1">6</p>
+                                <p class="tab_hd_s2">
+                                    <img src="images/pb_photo.jpg" alt="" class="pb_photo">
+                                    <span class="zbz_icon">直播中</span>
+                                    <span class="tab_hd_name hide_slh">喵喵</span>
+                                </p>
+                                <p class="tab_hd_s3 hide_slh">123456789123</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 切换内容 E -->
+        </div>
+        <div class="even3">
+            <div class="e3_cont mt_98">
+                <p class="e3_cont_p1">咸甜英雄榜<span>第1名</span>主播各获得</p>
+                <ul class="e3_cont_list">
+                    <li>
+                        <img src="images/e3_ch1.png" alt="">
+                    </li>
+                    <li>
+                        <div class="e3_icon_hand"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">游戏专区</span>
+                            <span class="e3_t2">置顶推荐7天</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="e3_icon_lw"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">9月份</span>
+                            <span class="e3_t2">礼物流水10%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="e3_cont">
+                <p class="e3_cont_p1">咸甜英雄榜<span>第2名</span>主播各获得</p>
+                <ul class="e3_cont_list">
+                    <li>
+                        <img src="images/e3_ch2.png" alt="">
+                    </li>
+                    <li>
+                        <div class="e3_icon_hand"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">游戏专区</span>
+                            <span class="e3_t2">置顶推荐5天</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="e3_icon_lw"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">9月份</span>
+                            <span class="e3_t2">礼物流水8%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="e3_cont">
+                <p class="e3_cont_p1">咸甜英雄榜<span>第3名</span>主播各获得</p>
+                <ul class="e3_cont_list">
+                    <li>
+                        <img src="images/e3_ch3.png" alt="">
+                    </li>
+                    <li>
+                        <div class="e3_icon_hand"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">游戏专区</span>
+                            <span class="e3_t2">置顶推荐3天</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="e3_icon_lw"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">9月份</span>
+                            <span class="e3_t2">礼物流水5%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="e3_cont">
+                <p class="e3_cont_p1">咸甜英雄榜<span>第4-10名</span>主播各获得</p>
+                <ul class="e3_cont_list">
+                    <li class="e3_cont_list_li2">
+                        <img src="images/e3_ch3.png" alt="">
+                    </li>
+                    <li>
+                        <div class="e3_icon_lw"></div>
+                        <div class="e3_text">
+                            <span class="e3_t1">9月份</span>
+                            <span class="e3_t2">礼物流水3%</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <p class="e3_ts">获胜阵营的主播资源奖励有效时长加倍</p>
+        </div>
+        <div class="even4">
+            <ul class="e4_list" id="goRule">
+                <li>
+                    <p class="e4_p1">当赠送至尊王者礼物时会触发红包掉落参与抢红包有机会赢得限定礼物【嗨起来】</p>
+                    <img src="images/e4_ch1.jpg" alt="" class="e4_ch1">
+                </li>
+                <li>
+                    <p class="e4_p2">累计贡献值达<span>30000</span>获得</p>
+                    <img src="images/e4_ch3.jpg" alt="" class="e4_ch2">
+                </li>
+                <li>
+                    <p class="e4_p2">累计贡献值达<span>1000</span>获得</p>
+                    <img src="images/e4_ch4.jpg" alt="" class="e4_ch3">
+                </li>
+                <li>
+                    <p class="e4_p2">送出<span>一个至尊王者</span>获得</p>
+                    <img src="images/e4_ch2.jpg" alt="" class="e4_ch4">
+                </li>
+            </ul>
+            <ul class="rule_list">
+                <li>
+                    <span class="rule_s1">1</span>
+                    <span class="rule_s2">活动截至时间：10月8日24：00</span>
+                </li>
+                <li>
+                    <span class="rule_s1">2</span>
+                    <span class="rule_s2">根据主播房间ID尾号随机分配阵营：尾号奇数主播代表咸党派，尾号偶数的主播代表甜党派。用户赠送活动礼物，增加阵营主播信仰值</span>
+                </li>
+                <li>
+                    <span class="rule_s1">3</span>
+                    <span class="rule_s2">用户勋章达到指定条件后自动解锁勋章；主播勋章活动结束后次日内发放。所有勋章有效时长均为30天</span>
+                </li>
+                <li>
+                    <span class="rule_s1">4</span>
+                    <span class="rule_s2">主播资源奖励于活动结束后发放，具体展示排期有待工作人员联系</span>
+                </li>
+                <li>
+                    <span class="rule_s1">5</span>
+                    <span class="rule_s2">抢得的红包限定礼物将自动存入礼物背包栏，请在背包栏内查看</span>
+                </li>
+                <li>
+                    <span class="rule_s1">6</span>
+                    <span class="rule_s2">返点奖励指礼物的税前分成收入，额外增加10%、8%，5%，3%的分成比例。若是已签约经纪公司对公结算的主播，奖励则发放到所属经纪公司。返点奖励将于10月份收入时一起结算</span>
+                </li>
+                <li>
+                    <span class="rule_s1">7</span>
+                    <span class="rule_s2">本活动禁止任何作弊行为，一经发现，将取消获奖资格</span>
+                </li>
+            </ul>
+            <p class="lk_text">腾讯保留在法律范围内对本活动规则最终解释权</p>
+        </div>
+    </div>
+    <script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.11.3.min.js"></script>
+    <script>
+    (function(win) {
+        var doc = win.document,
+        html = doc.documentElement,
+        option = html.getAttribute('data-use-rem');
+
+        if (option === null) return;
+
+        // defaut baseWidth : 750px；
+        var baseWidth = parseInt(option).toString() == 'NaN' ? 750 : parseInt(option);
+        var grids = baseWidth / 100;
+        var clientWidth = html.clientWidth || 375;
+
+        // set rem first
+        html.style.fontSize = clientWidth / grids + 'px';
+
+        // create testDom
+        var testDom = document.createElement('div');
+        var testDomWidth = 0;
+        var adjustRatio = 0;
+        testDom.style.cssText = 'height:0;width:1rem;';
+        doc.body.appendChild(testDom);
+
+        var calcTestDom = function() {
+            testDomWidth = testDom.offsetWidth;
+            if (testDomWidth !== Math.round(clientWidth / grids)) {
+                adjustRatio = clientWidth / grids / testDomWidth;
+                var reCalcRem = clientWidth * adjustRatio / grids;
+                html.style.fontSize = reCalcRem + 'px';
+            } else {
+                doc.body.removeChild(testDom);
+            }
+        };
+
+        // detect if rem calc is working directly
+        // if not , recalc and set the rem value
+        setTimeout(calcTestDom, 20);
+
+        var reCalc = function() {
+            var newCW = html.clientWidth;
+            if (newCW === clientWidth) return;
+            clientWidth = newCW;
+            html.style.fontSize = newCW * (adjustRatio ? adjustRatio: 1) / grids + 'px';
+            // if( testDom ) setTimeout(calcTestDom, 20);
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+
+        var resizeEvt = 'orientationchange' in win ? 'orientationchange': 'resize';
+
+        win.addEventListener(resizeEvt, reCalc, false);
+        // detect clientWidth is changed ?
+        doc.addEventListener('DOMContentLoaded', reCalc, false);
+    })(window); 
+
+    //设置粉丝外层div宽度
+    var fsList = document.getElementById("fsList");
+    fsList.style.width = fsList.children[0].offsetWidth * fsList.children.length + "px";
+
+    //切换
+    function tab(btnBox,contBox,btn_class) {
+        var btnBox = document.getElementById(btnBox);
+        var tabBtn = btnBox.getElementsByTagName("a");
+        var contBox = document.getElementById(contBox);
+        for(var i = 0; i<tabBtn.length; i++){
+            tabBtn[i].index = i;
+            tabBtn[i].onclick = function(){
+                for(var i = 0; i<tabBtn.length; i++){
+                    tabBtn[i].className = btn_class + (i+1);
+                    contBox.children[i].style.display = "none";
+                }
+                tabBtn[this.index].className = btn_class + (this.index+1) + "_on";
+                contBox.children[this.index].style.display = "block";
+            }
+        }
+    }
+    tab("e1TabBtn","e1TabBox","tab_btn");
+    $('.btn_rule').on('click',function(e){
+        var target = e.target;
+        var id = $(target).data("to");
+        $('html,body').animate({scrollTop:$('#'+id).offset().top}, 800);
+    });
+
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  data-use-rem="750">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+    <title>六周年音乐节</title>
+  </head>
+  <style>
+    body{width: 100%;font-size: 12px;color: #6e6d6d;background: #000000;}
+    ul,ol{list-style-type: none;}
+    body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;font-family: "Microsoft YaHei";}
+    h1{display: none;}
+    img{display: block;width: 100%; } 
+    a{text-decoration: none;}
+    .hide_slh{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+    .header{width: 7.5rem; height: 8.21rem; background: url("images/header.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .even1{width: 7.5rem; height: 12.04rem; background: url("images/bg_even1.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .even2{width: 7.5rem; height: 10.24rem; background: url("images/bg_even2.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .even3{width: 7.5rem; height: 10.42rem; background: url("images/bg_even3.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .even4{width: 7.5rem; height: 9.04rem; background: url("images/bg_even4.jpg") no-repeat; background-size: 7.5rem; overflow: hidden; position: relative;}
+    .sm_text{width: 100%; height: 0.77rem; background-color: #000; text-align: center; line-height: 0.77rem; color: #6a6a6a; font-size: 0.26rem;}
+    
+    .logo_lol{display: block; width: 1.8rem; height: 0.66rem; background-size: 1.8rem; background: url("images/logo_lol.png") no-repeat; background-size: 1.8rem; float: left; margin: 0.33rem 0.18rem 0 0.65rem;}
+    .logo_music{display: block; width: 2.18rem; height: 0.5rem; background: url("images/logo_music.png") no-repeat; background-size: 2.18rem; float: left; margin: 0.4rem 0.16rem 0 0;}
+    .logo_qedj{display: block; width: 1.71rem; height: 0.48rem; background: url("images/logo_qedj.png") no-repeat; background-size: 1.71rem; float: left; margin: 0.4rem 0.16rem 0 0;}
+    .hd_btn{width: 6.55rem; height: 0.63rem; position: absolute; bottom: 0.7rem; left: 0.46rem;}
+    .btn_download{display: block; width: 2.86rem; height: 0.63rem; background: url("images/btn1.png") no-repeat; float: left; background-size: 2.86rem; text-align: center; line-height: 0.62rem; color: #683c05; font-size: 0.24rem;}
+    .btn_yyj{display: block; width: 2.86rem; height: 0.63rem; background: url("images/btn2.png") no-repeat; float: right; background-size: 2.86rem; text-align: center; line-height: 0.62rem; color: #683c05; font-size: 0.24rem;}
+
+    /*even2*/
+    .video_bg{width: 6.72rem; height: 4.66rem; background: url("images/video_bg.jpg") no-repeat; background-size: 6.72rem; border: 0.04rem solid #815a2c; margin: 0.98rem auto 0;}
+    .video{width: 100%; height: 100%;}
+    .zb_ts{width: 100%; height: 0.5rem; text-align: center; line-height: 0.5rem; color: #d8b27b; font-size: 0.3rem; margin: 0.15rem auto 0;}
+    .aw_icon{display: inline-block; width: 0.35rem; height: 0.32rem; background: url("images/aw_icon.png") no-repeat; background-size: 0.33rem; vertical-align: middle;}
+    .zb_ts span{vertical-align: middle;}
+    .zb_tj{width: 6.75rem; overflow: hidden; margin: 0.7rem auto 0;}
+    .zb_num{width: 0.6rem; height: 0.6rem; text-align: center; line-height: 0.6rem; color: #6666b4; text-align: center; float: left; border: 0.01rem solid #6666b4; border-radius: 50%; font-size: 0.26rem; margin-top: 0.15rem;}
+    .zb_rg{width: 5.95rem; overflow: hidden; float: left; margin-left: 0.1rem;}
+    .zb_rg_text{width: 100%; color: #c09f6f; font-size: 0.3rem; line-height: 0.4rem;}
+    .tj_time{display: inline-block; width: 0.62rem; height: 0.56rem; background: url("images/tj_time.png") no-repeat; background-size: 0.62rem; vertical-align: text-bottom;}
+    .zb_btn{width: 100%; overflow: hidden; margin-top: 0.2rem;}
+    .btn_lq{display: block; width: 2.86rem; height: 0.63rem; background: url("images/btn1.png") no-repeat; float: left; background-size: 2.86rem; text-align: center; line-height: 0.62rem; color: #683c05; font-size: 0.24rem;}
+    .btn_cj{display: block; width: 2.86rem; height: 0.63rem; background: url("images/btn2.png") no-repeat; float: right; background-size: 2.86rem; text-align: center; line-height: 0.62rem; color: #683c05; font-size: 0.24rem;}
+    .tj_lolzb{display: inline-block; width: 2.17rem; height: 0.59rem; background: url("images/tj_lolzb.png") no-repeat; background-size: 2.17rem;}
+
+    /*even2*/
+    .lb_box{width: 6.49rem; height: 8.23rem; margin: 1.05rem auto 0; position: relative;}
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-button-next, .swiper-container-rtl .swiper-button-prev{display: block; width: 0.72rem; height: 0.72rem; background: url("images/btn_next.png") no-repeat; background-size: 0.72rem; right: -0.36rem;}
+    .swiper-button-prev, .swiper-container-rtl .swiper-button-next{display: block; width: 0.72rem; height: 0.72rem; background: url("images/btn_prev.png") no-repeat; background-size: 0.72rem; left: -0.36rem;}
+    .swiper-pagination{width: 100%; margin-top: 0.1rem;}
+    .swiper-pagination-bullet{display: inline-block; width: 0.18rem; height: 0.18rem; background: url("images/tab_icon.png") no-repeat; background-size: 0.18rem; margin: 0 0.06rem;}
+    .swiper-pagination-bullet-active{display: inline-block; width: 0.18rem; height: 0.18rem; background: url("images/tab_icon_on.png") no-repeat; background-size: 0.18rem;}
+
+    .swiper-pagination2{width: 100%; margin-top: 0.1rem; text-align: center;}
+    .swiper-button-next2{display: block; width: 0.72rem; height: 0.72rem; background: url("images/btn_next.png") no-repeat; background-size: 0.72rem; position: absolute; right: -0.36rem; top: 50%; z-index: 10;}
+    .swiper-button-prev2{display: block; width: 0.72rem; height: 0.72rem; background: url("images/btn_prev.png") no-repeat; background-size: 0.72rem; position: absolute; left: -0.36rem; top: 50%; z-index: 10; margin-top: -0.36rem;}
+
+    /*even4*/
+    .e4_list{width: 6.5rem; overflow: hidden; margin: 1.02rem auto 0;}
+    .e4_list li{width: 6.5rem; height: 2.06rem; overflow: hidden; margin-bottom: 0.25rem; }
+
+
+    .tl_left{display: inline-block; width: 55px; height: 6px; background: url("images/tl_left.png") no-repeat; vertical-align: middle;}
+    .tl_right{display: inline-block; width: 55px; height: 6px; background: url("images/tl_right.png") no-repeat; vertical-align: middle;}
+    .tl_text{color: #fee4ba; font-size: 0.36rem; font-weight: bold; vertical-align: middle; padding: 0 25px;}
+    .e1_tj{position: relative;}
+    .btn_rule{color: #ffefd9; font-size: 0.3rem; position: absolute; bottom: 0.1rem; right: 0.5rem; overflow: hidden; text-decoration: underline;}
+    .tc_bg{width: 100%; height: 100%; background: rgba(0,0,0,0.6); position: fixed; top: 0px; left: 0px; z-index: 10;}
+    .tc_rule{width: 6.6rem; height: 6.83rem; background-color: #37323a; border: 0.02rem solid #d7a052; position: absolute; top: 50%; left: 50%; margin: -3.41rem 0 0 -3.3rem;}
+    .tc_even_tl{width: 100%; overflow: hidden; text-align: center; line-height: 0.5rem; margin: 0.3rem auto 0;}
+    .rule_list{width: 5.8rem; margin: 0.4rem auto 0; overflow: hidden;}
+    .rule_list li{width: 100%; color: #d6b277; font-size: 0.24rem; margin-bottom: 0.1rem; line-height: 0.32rem; overflow: hidden;}
+    .rule_list li span{color: #f7a839;}
+    .rule_list li font{color: #fddca5;}
+    .close_tc{display: block; width: 1rem; height: 1rem; position: absolute; bottom: -1.5rem; left: 50%; margin-left: -0.5rem; border: 0.05rem solid #d7a052; font-size: 1rem; text-align: center; line-height: 0.9rem; color: #d7a052; border-radius: 50%; overflow: hidden;}
+    .rule_list .mb_50{margin-bottom: 0.5rem;}
+
+  </style>
+  <body>
+    <div class="header">
+        <a href="javascript:;" class="logo_lol"></a>
+        <a href="javascript:;" class="logo_music"></a>
+        <a href="javascript:;" class="logo_qedj"></a>
+        <div class="hd_btn">
+            <a href="javascript:;" class="btn_download">下载企鹅电竞</a>
+            <a href="javascript:;" class="btn_yyj">LOL音乐节官网</a>
+        </div>
+    </div>
+    <div class="even1">
+        <a href="javascript:showBox('tcRule');" class="btn_rule">活动规则</a>
+        <div class="video_bg">
+            <div id="mod_player" class="video"></div>
+        </div>
+        <p class="zb_ts">
+            <span class="aw_icon"></span>
+            <span>看直播领多重豪礼</span>
+        </p>
+        <div class="zb_tj">
+            <div class="zb_num">01</div>
+            <div class="zb_rg">
+                <p class="zb_rg_text">
+                    观看直播<span class="tj_time"></span>分钟，可领取企鹅电竞66金币,抽永久皮肤
+                </p>
+                <div class="zb_btn">
+                    <a href="javascript:;" class="btn_lq">领取66金币</a>
+                    <a href="javascript:;" class="btn_cj">抽皮肤</a>
+                </div>
+            </div>    
+        </div>
+        <div class="zb_tj">
+            <div class="zb_num">02</div>
+            <div class="zb_rg">
+                <p class="zb_rg_text">
+                    认证成为<span class="tj_lolzb"></span>有机会抽取永久皮肤、7天体验皮肤
+                </p>
+                <div class="zb_btn">
+                    <a href="javascript:;" class="btn_lq">成为主播</a>
+                    <a href="javascript:;" class="btn_cj">抽皮肤</a>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="even2">
+        <div class="lb_box">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/e4_pic1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e4_pic2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e4_pic3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e4_pic4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <div class="even3">
+        <div class="lb_box">
+            <div class="swiper-container2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/e2_pic1.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e2_pic2.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e2_pic3.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/e2_pic4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination2"></div>
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev2"></div>
+            <div class="swiper-button-next2"></div>
+        </div>
+    </div>
+    <div class="even4">
+        <ul class="e4_list">
+            <li>
+                <a href="javascript:;" class="">
+                    <img src="images/e3_pic1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="">
+                    <img src="images/e3_pic2.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="">
+                    <img src="images/e3_pic3.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="sm_text">腾讯保留在法律范围内对本活动规则最终解释权</p>
+    <!-- 弹窗 -->
+    <div class="tc_bg" id="tcRule" style="display:none">
+        <div class="tc_rule">
+            <div class="tc_even_tl">
+                <i class="tl_left"></i>
+                <span class="tl_text">活动规则</span>
+                <i class="tl_right"></i>
+            </div>
+            <ul class="rule_list">
+                <li><span>活动时间：</span></li>
+                <li class="mb_50"><font>2017年11月3日19:00—2017年11月6日00:00</font></li>
+                <li><span>奖品列表：</span></li>
+                <li>01.  观看奖品： 偶像歌手 阿狸（永久） </li>
+                <li class="mb_50">02.  开播奖品： 偶像歌手 阿狸（永久）、灌篮高手 德莱厄斯（七天）、兔女郎 锐雯（七天）</li>
+                <li><span>领取规则：</span></li>
+                <li>点击抽奖按钮，提示中奖后需填写个人账号区服信息，以便领取奖品</li>
+            </ul>
+            <a href="javascript:hideBox('tcRule');" class="close_tc">×</a>
+        </div>
+    </div>
+    <script src="http://imgcache.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2.js"></script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script>
+      (function(win) {
+        var doc = win.document,
+        html = doc.documentElement,
+        option = html.getAttribute('data-use-rem');
+        if (option === null) return;
+        // defaut baseWidth : 750px；
+        var baseWidth = parseInt(option).toString() == 'NaN' ? 750 : parseInt(option);
+        var grids = baseWidth / 100;
+        var clientWidth = html.clientWidth || 375;
+        // set rem first
+        html.style.fontSize = clientWidth / grids + 'px';
+        // create testDom
+        var testDom = document.createElement('div');
+        var testDomWidth = 0;
+        var adjustRatio = 0;
+        testDom.style.cssText = 'height:0;width:1rem;';
+        doc.body.appendChild(testDom);
+
+        var calcTestDom = function() {
+            testDomWidth = testDom.offsetWidth;
+            if (testDomWidth !== Math.round(clientWidth / grids)) {
+                adjustRatio = clientWidth / grids / testDomWidth;
+                var reCalcRem = clientWidth * adjustRatio / grids;
+                html.style.fontSize = reCalcRem + 'px';
+            } else {
+                doc.body.removeChild(testDom);
+            }
+        };
+
+        // detect if rem calc is working directly
+        // if not , recalc and set the rem value
+        setTimeout(calcTestDom, 20);
+
+        var reCalc = function() {
+            var newCW = html.clientWidth;
+            if (newCW === clientWidth) return;
+            clientWidth = newCW;
+            html.style.fontSize = newCW * (adjustRatio ? adjustRatio: 1) / grids + 'px';
+            // if( testDom ) setTimeout(calcTestDom, 20);
+        };
+
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+
+        var resizeEvt = 'orientationchange' in win ? 'orientationchange': 'resize';
+
+        win.addEventListener(resizeEvt, reCalc, false);
+        // detect clientWidth is changed ?
+        doc.addEventListener('DOMContentLoaded', reCalc, false);
+    })(window); 
+    </script>
+
+    <script>
+        var video = new tvp.VideoInfo();
+        video.setVid("i001216370f");
+        var player = new tvp.Player();
+        player.create({
+            width: "100%",
+            height: "100%",
+            video: video,
+            modId: "mod_player",
+            pic: "http://ossweb-img.qq.com/images/roco/act/a20120925movie/video_pic.jpg",        //视频封面地址
+            vodFlashSkin: "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",  //精简皮肤        
+            autoplay: true   //是否自动播放
+        });
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
+        });
+        var swiper2 = new Swiper('.swiper-container2', {
+            pagination: '.swiper-pagination2',
+            nextButton: '.swiper-button-next2',
+            prevButton: '.swiper-button-prev2',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 30,
+            loop: true
+        });
+
+        function showBox(box){
+            var box = document.getElementById(box);
+            box.style.display = "block";
+        }
+        function hideBox(box){
+            var box = document.getElementById(box);
+            box.style.display = "none";
+        }
+
+    </script>  
+
+  </body>
+
+</html>

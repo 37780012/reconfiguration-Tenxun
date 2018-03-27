@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="gbk">
+<meta name="robots" content="all">
+<meta name="author" content="Tencent-CP">
+<meta name="Copyright" content="Tencent">
+<meta name="Description" content="">
+<meta name="Keywords" content="腾讯游戏">
+<title>全明星周末</title>
+<!-- 页面设计：cp | 页面制作：cp | 创建：2017-xx-xx -->
+
+<style type="text/css">
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+.hid{text-indent:-9999px;font-size:0px;overflow:hidden;width:0px;height:0px;display:block}
+/*footer*/
+#footer_ied{height:150px;overflow:hidden;font-size:12px;font-family:'\5b8b\4f53';color:#5b5b5b; background-color: #000000;}
+.wrap_ied{width:1000px;height:90px;overflow:hidden;margin:0 auto;padding-top:54px;}
+.wrap_ied p{width:1000px;overflow:hidden;text-align:center;margin-bottom:5px;}
+.wrap_ied p a{color:#5b5b5b; text-decoration: none;}
+/*page*/
+a{text-decoration: none;}
+body{padding-top:42px;min-width:1000px; font: 12px/150% tahoma,'\5b8b\4f53',sans-serif;}
+body{font-family:'\5FAE\8F6F\96C5\9ED1';}
+.pg_sp{background: url("images/pg_sp.png") no-repeat;}
+.hide_slh{overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+.pg_center{width: 1000px; height: 100%; position: relative; margin: 0 auto 0; overflow: hidden;}
+.pg_center2{width: 1000px; height: 100%; position: relative; margin: 0 auto 0;}
+.pg1_header{min-width: 1000px; height: 819px; background: url("images/pg1_header.jpg") 50% 0 no-repeat;}
+.pg2_header{min-width: 1000px; height: 819px; background: url("images/pg2_header.jpg") 50% 0 no-repeat;}
+.pg3_header{min-width: 1000px; height: 819px; background: url("images/pg3_header.jpg") 50% 0 no-repeat;}
+.even1{min-width: 1000px; height: 882px; background: url("images/pg_even1.jpg") 50% 0 no-repeat;}
+.even2{min-width: 1000px; height: 1068px; background: url("images/pg_even2.jpg") 50% 0 no-repeat;}
+.even3{min-width: 1000px; height: 776px; background: url("images/pg_even3.jpg") 50% 0 no-repeat;}
+
+.logo_bg{width: 657px; height: 63px; background: url("images/logo.png") no-repeat; margin: 10px auto 0;}
+.logo1{display: block; width: 170px; height: 100%; float: left;}
+.logo2{display: block; width: 185px; height: 100%; float: left; margin-left: 66px;}
+.logo3{display: block; width: 152px; height: 100%; float: left; margin-left: 83px;}
+.login_box{display: block; width: 439px; height: 32px; margin: 473px auto 0; background: rgba(0,0,0,0.3); font-size: 12px; color: #cacaca; line-height: 32px; padding: 0 20px; text-align: center;}
+.login_box a{color: #ffa73f;}
+
+.zbj_box{width: 100%; overflow: hidden; position: absolute; top: -220px; left: 0; }
+.zbj_list{width: 1015px; overflow: hidden;}
+.zbj_list li{width: 240px; height: 210px; float: left; margin: 0 13px 13px 0;}
+.zbj_pic{width: 240px; height: 170px; overflow: hidden; position: relative;}
+.zbj_pic img{display: block; width: 100%; height: 100%;}
+.zbj_js{width: 100%; height: 30px; background: rgba(0,0,0,0.1); position: absolute; bottom: 0; left: 0;}
+.zbj_js p{width: 46%; color: #e4e4e4; font-size: 14px; float: left; margin-left: 4%; line-height: 30px;}
+.zbj_js .zbj_js_t{float: right; margin-left: 0; margin-right: 4%; text-align: right;}
+.zbj_info{width: 100%; height: 40px; background-color: #333333; overflow: hidden;}
+.zbj_info p{width: 58%; color: #fefdfa; font-size: 14px; float: left; margin-left: 4%; line-height: 40px;}
+.btn_dz{display: block; width: 70px; height: 25px; float: right; margin-right: 4%; margin-top: 8px; background-position: -80px 0;}
+.btn_dz_gray{display: block; width: 70px; height: 25px; float: right; margin-right: 4%; margin-top: 8px; background-position: 0 0;}
+
+/*抽奖*/
+.cj_box{width: 637px; height: 636px; margin: 190px auto 0; overflow: hidden; position: relative;}
+.cj_bg{width: 637px; height: 636px; background: url("images/cj_bg.png") no-repeat; position: absolute; left: 0; top: 0px;}
+.cj_btn{width: 223px; height: 258px; background: url("images/cj_btn.png") no-repeat; position: absolute; left: 50%;top: 176px; margin-left: -112px;}
+
+.e2_btn{width: 536px; height: 68px; margin: 43px auto 0; overflow: hidden;}
+.btn_aw{display: block; width: 240px; height: 68px; background-position: 0 -90px; float: left;}
+.btn_my_info{display: block; width: 240px; height: 68px; background-position: -263px -90px; float: right;}
+
+
+.zw_96{width: 100%; height: 96px;}
+.e3_ct1{width: 100%; height: 125px; overflow: hidden;}
+.e3_p1{width: 915px; overflow: hidden; margin: 0 auto 0; color: #adadad; font-size: 16px; line-height: 30px; text-indent: 32px;}
+.e3_dj{width: 692px; height: 217px; background: url("images/e3_dj.png") no-repeat; margin: 56px auto 0;}
+.e3_rule{width: 910px; overflow: hidden; margin: 115px auto 0;}
+.e3_rule li{width: 100%; overflow: hidden; margin-bottom: 10px;}
+.e3_s1{display: block; width: 22px; height: 22px; background-color: #1c1c1c; color: #515151; font-size: 16px; text-align: center; line-height: 22px; float: left; margin-right: 12px;}
+.e3_s2{display: block; width: 873px; font-size: 16px; line-height: 22px; float: left; color: #adadad;}
+
+
+
+/*弹窗*/
+.tc_bg{width: 100%; height: 100%; background: rgba(0,0,0,0.6); position: fixed; top: 0; left: 0; z-index: 15;}
+.tc_zjts{width: 416px; height: 242px; background: url("images/tc_zj.png") no-repeat; position: absolute; top: 50%; left: 50%; margin: -121px 0 0 -208px;}
+.tc_tl{width: 100%; height: 68px; overflow: hidden; margin-top: 5px; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 68px;}
+.tc_x_l{display: inline-block; width: 78px; height: 13px; background-position: 0 -183px; margin-right: 5px;}
+.tc_x_r{display: inline-block; width: 78px; height: 13px; background-position: -200px -183px; margin-left: 5px;}
+.tc_tl span{color: #ffb136; font-size: 25px; font-weight: bold; vertical-align: middle;}
+.tc_zjts_tx{width: 100%; height: 50px; overflow: hidden; color: #d8d8d8; font-size: 16px; line-height: 30px; padding-top: 20px; text-align: center;}
+.tc_zjts_tx strong{font-weight: bold;}
+.btn_sure{display: block; width: 153px; height: 54px; background-position: 0 -226px; margin: 5px auto 0;}
+
+
+
+.tc_add{width: 416px; height: 463px; background: url("images/tc_add.png") no-repeat; position: absolute; top: 50%; left: 50%; margin: -231px 0 0 -208px;}
+.tc_wr_box{width: 376px; overflow: hidden; margin: 23px auto 0;}
+.tc_wr{width: 100%; height: 34px; margin: 0 0 18px 0; overflow: hidden;}
+.tc_wr_tx{width: 75px; height: 34px; float: left; text-align: right; margin-right: 10px; font-size: 16px; color: #ffffff; line-height: 34px;}
+.tc_wr_inp{display: block; width: 280px; height: 34px; border: 0; float: left; background-color: #fff; color: #1c1818; font-size: 16px; text-indent: 5px;}
+.tc_add_ts{width: 100%; height: 60px; color: #9e9e9e; font-size: 16px; line-height: 22px; text-align: center; padding-top: 10px; margin: 0 auto 0;}
+.tc_add_btn{width: 338px; height: 55px; margin: 5px auto 0; overflow: hidden;}
+.btn_qx{display: block; width: 153px; height: 55px; background-position: -159px -226px; float: left;}
+.btn_save{display: block; width: 153px; height: 55px; background-position: 0 -297px; float: right;}
+.btn_change{display: block; width: 153px; height: 55px; background-position: 0 -366px; float: right;}
+.btn_close_tc{display: block; width: 37px; height: 37px; background-position: -438px -225px; position: absolute; top: -8px; right: -10px;}
+
+.tc_aw{width: 416px; height: 634px; position: absolute; top: 50%; left: 50%; margin: -317px 0 0 -208px; background: url("images/tc_aw.png") no-repeat;}
+.tc_aw_ct{width: 364px; height: 533px; overflow-x: hidden; overflow-y: auto; margin: 5px auto 0; padding-right: 3px;}
+.tc_aw_ct1{width: 364px; overflow: hidden; margin: 0rem auto 0;}
+.tc_aw_tl{width: 100%; height: 46px; overflow: hidden; display: flex; justify-content: center; align-items: center; text-align: center; line-height: 46px;}
+.tc_aw_l{display: inline-block; width: 96px; height: 9px; background-position: 0 -449px; margin-right: 5px;}
+.tc_aw_r{display: inline-block; width: 96px; height: 9px; background-position: -185px -449px; margin-left: 5px;}
+.tc_aw_tl span{color: #ffb136; font-size: 16px; font-weight: bold; vertical-align: middle;}
+.tc_aw_tl .tc_aw_tx{font-size: 16px; font-weight: bold; color: #fff;}
+.tc_aw_tl .tc_aw_tx font{font-size: 16px; font-weight: bold; color: #ffb136;}
+.tc_aw_table{width: 100%; overflow: hidden;}
+.tc_aw_table tr{width: 100%; height: 35px; overflow: hidden; border-bottom: 1px solid #323232;}
+.tc_aw_table tr th{background-color: #353535; font-size: 16px; color: #9e9e9e; text-align: center;}
+.tc_aw_table tr td{background-color: #232323; font-size: 16px; color: #f0f0f0; text-align: center;}
+.tc_aw_t1{width: 60px; border-right: 1px solid #323232;}
+.tc_aw_t2{width: 193px; border-right: 1px solid #323232;}
+.tc_aw_t3{width: 108px;}
+.btn_bqxx{display: block; width: 78px; height: 25px; background-position: -342px -225px; text-align: center; line-height: 25px; font-size: 14px; color: #000000; margin: 0 auto 0;}
+.tc_aw_ct::-webkit-scrollbar{width: 5px;height: 5px; background-color: #000; border-radius: 10px; overflow: hidden;}
+.tc_aw_ct::-webkit-scrollbar-track{ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); border-radius: 10px; background-color: #232323;}
+.tc_aw_ct::-webkit-scrollbar-thumb{ height: 20px; border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); background-color: #555;}
+
+.even1_no_sj{min-width: 1000px; height: 280px; background: url("images/pg_even1.jpg") 50% 0 no-repeat;}
+.even1_no_sj .zwsj_bg{width: 1000px; height: 443px; background: url("images/zwsj_bg.png") no-repeat; position: absolute; top: 0px; left: 0; z-index: 10;}
+.even1_no_sj .zbj_list{height: 436px;}
+
+.cj_num{width: 100%; height: 30px; font-size: 20px; text-align: center; line-height: 30px; color: #adadad; padding-top: 10px;}
+.cj_num strong{color: #fff; font-weight: bold;}
+
+
+
+
+
+/*body*/
+</style>
+</head>
+<body>
+    <h1 class="hid">全明星周末</h1>
+    <div class="pg3_header">
+        <div class="pg_center">
+            <div class="logo_bg">
+            	<a href="javascript:;" class="logo1" title="企鹅电竞"></a>
+            	<a href="javascript:;" class="logo2" title="绝地求生：刺激战场"></a>
+            	<a href="javascript:;" class="logo3" title="绝地求生 全军出击"></a>
+            </div>
+			<div class="login_box">
+				<!--登录前状态 Start-->
+				<p id="unlogin">亲爱的用户，请 <a href="javascript:;" id="dologin">【登录】</a></p>
+				<!--登录前状态 End-->
+				<!--登录后状态 Start-->
+				<p id="logined" style="display:none">欢迎您，<span id='login_qq_span'></span>，<a href="javascript:;" id="dologout">【注销】</a></p>
+				<!--登录后状态 End-->
+			</div>
+        </div>
+    </div>
+    <!-- 没有数据 改 even1 为：even1_no_sj -->
+    <div class="even1">
+    	<div class="pg_center2">
+    		<div class="zbj_box">
+    			<!-- 暂无数据 S -->
+    			<div class="zwsj_bg"></div>
+    			<!-- 暂无数据 E -->
+	            <ul class="zbj_list">
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	                <li>
+	                    <div class="zbj_pic">
+	                        <img src="images/zbj_pic.jpg" alt="">
+	                        <div class="zbj_js">
+	                            <p class="hide_slh">主播名称</p>
+	                            <p class="zbj_js_t hide_slh">60万人气</p>
+	                        </div>
+	                    </div>
+	                    <div class="zbj_info">
+	                        <p class="hide_slh">直播间名称</p>
+	                        <a href="javascript:;" class="btn_dz pg_sp jb_gray"></a>
+	                    </div>
+	                </li>
+	            </ul>
+	        </div>
+    	</div>
+    </div>
+    <div class="even2">
+    	<div class="pg_center">
+	    	<div class="cj_box">
+				<div id="cjBg" class="cj_bg"></div>
+	    		<div id="cjBtn" class="cj_btn"></div>
+	    	</div>
+	    	<p class="cj_num">您今天还有<strong>XX</strong>次抽奖的机会</p>
+	    	<div class="e2_btn">
+	    		<a href="javascript:showBox('tc_aw');" class="btn_aw pg_sp" title="中奖记录"></a>
+	    		<a href="javascript:showBox('tc_add');" class="btn_my_info pg_sp" title="个人信息"></a>
+	    	</div>
+    	</div>
+    </div>
+    <div class="even3">
+    	<div class="pg_center">
+    		<div class="zw_96"></div>
+    		<div class="e3_ct1">
+		    	<p class="e3_p1">活动期间，玩家登陆吃鸡盛典专题页后，可以为自己喜欢的主播点赞，每个ID每日有三次点赞机会，可以为自己喜欢、支持的主播点赞。</p>
+		    	<p class="e3_p1">活动期间，玩家点赞后可以增加一次抽奖次数，每个用户每天最多可以抽奖3次。抽奖次数每天刷新，不可多天叠加。</p>
+    		</div>
+	    	<div class="e3_dj"></div>
+	    	<ul class="e3_rule">
+	    		<li>
+	    			<span class="e3_s1">1</span>
+	    			<span class="e3_s2">实物奖后根据系统引导填写姓名、电话、收货地址等信息；Q币及游戏礼包，将通过领取链接，以QQ号或微信方式领取；奖品将在盛典结束后90个工作日内通过邮寄形式发放；</span>
+	    		</li>
+	    		<li>
+	    			<span class="e3_s1">2</span>
+	    			<span class="e3_s2">本活动最终解释权归官方所有。</span>
+	    		</li>
+	    	</ul>
+    	</div>
+    </div>
+
+    <!-- 弹窗 S -->
+    <div class="tc_bg" id="tc_zjts_loss" style="display:none">
+        <div class="tc_zjts">
+            <div class="tc_tl">
+                <span class="tc_x_l pg_sp"></span>
+                <span>中奖提示</span>
+                <span class="tc_x_r pg_sp"></span>
+            </div>
+            <p class="tc_zjts_tx">很遗憾，您并为中奖。感谢您的参与</p>
+            <a href="javascript:hideBox('tc_zjts_loss');" class="btn_sure pg_sp"></a>
+        </div>
+    </div>
+    <div class="tc_bg" id="tc_zjts_success" style="display:none">
+        <div class="tc_zjts">
+            <div class="tc_tl">
+                <span class="tc_x_l pg_sp"></span>
+                <span>中奖提示</span>
+                <span class="tc_x_r pg_sp"></span>
+            </div>
+            <p class="tc_zjts_tx">恭喜您获得 XXXXXX，请完善信息</p>
+            <a href="javascript:hideBox('tc_zjts_success');" class="btn_sure pg_sp"></a>
+        </div>
+    </div>
+    <!-- 弹窗 E -->
+    <!-- 弹窗 填写信息 S -->
+    <div class="tc_bg" id="tc_add" style="display:none">
+        <div class="tc_add">
+            <div class="tc_tl">
+                <span class="tc_x_l pg_sp"></span>
+                <span>虚拟道具补全信息</span>
+                <span class="tc_x_r pg_sp"></span>
+            </div>
+            <div class="tc_wr_box">
+                <div class="tc_wr">
+                    <span class="tc_wr_tx">姓 名</span>
+                    <input type="text" class="tc_wr_inp"/>
+                </div>
+                <div class="tc_wr">
+                    <span class="tc_wr_tx">手机号</span>
+                    <input type="text" class="tc_wr_inp"/>
+                </div>
+                <div class="tc_wr">
+                    <span class="tc_wr_tx">QQ</span>
+                    <input type="text" class="tc_wr_inp"/>
+                </div>
+                <div class="tc_wr">
+                    <span class="tc_wr_tx">地址信息</span>
+                    <input type="text" class="tc_wr_inp"/>
+                </div>
+            </div>
+            <p class="tc_add_ts">奖品将在盛典结束后90个工作日内<br />通过邮寄形式发放</p>
+            <div class="tc_add_btn">
+                <a href="javascript:hideBox('tc_add');" class="btn_qx pg_sp"></a>
+                <!-- 修改按钮的class为："btn_change" -->
+                <a href="javascript:;" class="btn_save pg_sp"></a>
+            </div>
+            <a href="javascript:hideBox('tc_add');" class="btn_close_tc pg_sp"></a>
+        </div>
+    </div>
+    <!-- 弹窗 填写信息 E -->
+    <!-- 弹窗 中奖纪录 S -->
+    <div class="tc_bg" id="tc_aw" style="display:none">
+        <div class="tc_aw">
+            <div class="tc_tl">
+                <span class="tc_x_l pg_sp"></span>
+                <span>中奖纪录</span>
+                <span class="tc_x_r pg_sp"></span>
+            </div>
+            <div class="tc_aw_ct">
+                <div class="tc_aw_ct1">
+                    <div class="tc_aw_tl">
+                        <span class="tc_aw_l pg_sp"></span>
+                        <span class="tc_aw_tx"><font>2</font>月<font>9</font>日</span>
+                        <span class="tc_aw_r pg_sp"></span>
+                    </div>
+                    <table class="tc_aw_table">
+                        <tr>
+                            <th class="tc_aw_t1">编号</th>
+                            <th class="tc_aw_t2">中奖结果</th>
+                            <th class="tc_aw_t3">操作</th>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">1</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">--</td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">2</td>
+                            <td class="tc_aw_t2">iPhone</td>
+                            <td class="tc_aw_t3">
+                                <a href="javascript:;" class="btn_bqxx pg_sp">补全信息</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tc_aw_ct1">
+                    <div class="tc_aw_tl">
+                        <span class="tc_aw_l pg_sp"></span>
+                        <span class="tc_aw_tx"><font>2</font>月<font>9</font>日</span>
+                        <span class="tc_aw_r pg_sp"></span>
+                    </div>
+                    <table class="tc_aw_table">
+                        <tr>
+                            <th class="tc_aw_t1">编号</th>
+                            <th class="tc_aw_t2">中奖结果</th>
+                            <th class="tc_aw_t3">操作</th>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">1</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">--</td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">2</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">
+                                --
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">3</td>
+                            <td class="tc_aw_t2">iPhone</td>
+                            <td class="tc_aw_t3">
+                                <a href="javascript:;" class="btn_bqxx pg_sp">补全信息</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tc_aw_ct1">
+                    <div class="tc_aw_tl">
+                        <span class="tc_aw_l pg_sp"></span>
+                        <span class="tc_aw_tx"><font>2</font>月<font>9</font>日</span>
+                        <span class="tc_aw_r pg_sp"></span>
+                    </div>
+                    <table class="tc_aw_table">
+                        <tr>
+                            <th class="tc_aw_t1">编号</th>
+                            <th class="tc_aw_t2">中奖结果</th>
+                            <th class="tc_aw_t3">操作</th>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">1</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">--</td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">2</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">
+                                --
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">3</td>
+                            <td class="tc_aw_t2">iPhone</td>
+                            <td class="tc_aw_t3">
+                                <a href="javascript:;" class="btn_bqxx pg_sp">补全信息</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tc_aw_ct1">
+                    <div class="tc_aw_tl">
+                        <span class="tc_aw_l pg_sp"></span>
+                        <span class="tc_aw_tx"><font>2</font>月<font>9</font>日</span>
+                        <span class="tc_aw_r pg_sp"></span>
+                    </div>
+                    <table class="tc_aw_table">
+                        <tr>
+                            <th class="tc_aw_t1">编号</th>
+                            <th class="tc_aw_t2">中奖结果</th>
+                            <th class="tc_aw_t3">操作</th>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">1</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">--</td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">2</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">
+                                --
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">3</td>
+                            <td class="tc_aw_t2">iPhone</td>
+                            <td class="tc_aw_t3">
+                                <a href="javascript:;" class="btn_bqxx pg_sp">补全信息</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tc_aw_ct1">
+                    <div class="tc_aw_tl">
+                        <span class="tc_aw_l pg_sp"></span>
+                        <span class="tc_aw_tx"><font>2</font>月<font>9</font>日</span>
+                        <span class="tc_aw_r pg_sp"></span>
+                    </div>
+                    <table class="tc_aw_table">
+                        <tr>
+                            <th class="tc_aw_t1">编号</th>
+                            <th class="tc_aw_t2">中奖结果</th>
+                            <th class="tc_aw_t3">操作</th>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">1</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">--</td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">2</td>
+                            <td class="tc_aw_t2">谢谢参与</td>
+                            <td class="tc_aw_t3">
+                                --
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="tc_aw_t1">3</td>
+                            <td class="tc_aw_t2">iPhone</td>
+                            <td class="tc_aw_t3">
+                                <a href="javascript:;" class="btn_bqxx pg_sp">补全信息</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <a href="javascript:hideBox('tc_aw');" class="btn_close_tc pg_sp"></a>
+        </div>
+    </div>
+    <!-- 弹窗 中奖纪录 E -->
+    
+<script src="http://ossweb-img.qq.com/images/js/foot.js"></script>
+<script src="http://ossweb-img.qq.com/images/js/title.js"></script>
+<script src="http://pingjs.qq.com/ping_tcss_ied.js"></script>
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script src="http://ossweb-img.qq.com/images/js/milo/milo-min.js"></script>
+<script src="//ossweb-img.qq.com/images/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/awardRotate.js"></script>
+<script>
+	milo.addEvent(g("dologin"), "click", function() {
+		need("biz.login-min",function(LoginManager){
+		LoginManager.init({
+				needReloadPage:true
+			});
+			LoginManager.login();
+		});
+		return false;
+	});
+	milo.addEvent(g("dologout"), "click", function() {
+		need("biz.login-min",function(LoginManager){
+			LoginManager.logout();
+		});
+		return false;
+	});
+	milo.ready(function() {
+		need("biz.login-min",function(LoginManager){
+			LoginManager.checkLogin(function(){
+				g("login_qq_span").innerText= LoginManager.getUserUin();//获取QQ号
+			});
+		});
+	});
+
+	//奖品角度、奖品列表
+	var list = [
+		[0, '100QB'],
+		[60, '谢谢参与'],
+		[120, '游戏礼包'],
+		[180, 'QQ公仔'],
+		[240, 'Iphone X'],
+		[300, '外设键盘']
+	];
+
+	//抽奖停止的位置
+	var idx = 4;
+	var flag = false;
+
+	//抽奖函数
+	function prizedraw(angles, txt)
+	{
+		if (flag) {return;}
+		flag = true;
+		$('#cjBg').stopRotate();
+		$('#cjBg').rotate({
+			angle:0, //重置需要用到，不能去掉，否则转盘只能转一次
+			animateTo:angles+1800, //angels是转盘停止的角度，1800是让转盘转5圈(1800 / 360 = 5) 
+			duration:8000, //转盘转的速度
+			callback:function (){	//回调函数
+				showBox('tc_zjts_success');
+				flag = false;
+			}
+		});
+	} 
+	//点击开始抽奖的按钮
+	$('#cjBtn').click(function(){
+		prizedraw(list[idx][0], list[idx][1]);
+	});
+
+	function showBox(box){
+	    var box = document.getElementById(box);
+	    box.style.display = "block";
+	}
+	function hideBox(box){
+	    var box = document.getElementById(box);
+	    box.style.display = "none";
+	}
+
+</script>
+<script>
+ //此段代码不能放到外链JS中，
+ var setSite = { //设置网站属性
+ siteType: "a20180123cjsd", //必填项:"os"代表是官网，如果不是，则填写actName例如a20160701xxx
+ pageType: "page", //必填项:本页面的定位；按照页面含义填写例如main||list||detail||download||share||page1||pageN
+ pageName: "内页", //必填项:页面中文名
+ osact: 0, //选填项:是否是官网专题(在官网运营的专题)boolean；默认是0；可以在链接上加入参数osact=1来灵活设置
+ ingame: 0, //选填项:是否投放在游戏APP内boolean；默认是0；可以在链接上加入参数ingame=1来灵活设置
+ stayTime: 0 //选填项:是否需要统计停留时长boolean；默认是0
+ }
+ if (typeof (pgvMain) == 'function') pgvMain();//千万不能忘记！
+</script>
+</body>
+</html>

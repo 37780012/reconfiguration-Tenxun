@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="gbk">
+<meta name="robots" content="all">
+<meta name="author" content="Tencent-CP">
+<meta name="Copyright" content="Tencent">
+<meta name="Description" content="">
+<meta name="Keywords" content="腾讯游戏">
+<title>全明星周末</title>
+<!-- 页面设计：cp | 页面制作：cp | 创建：2017-xx-xx -->
+
+<style type="text/css">
+/*reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+.hid{text-indent:-9999px;font-size:0px;overflow:hidden;width:0px;height:0px;display:block}
+/*footer*/
+#footer_ied{height:150px;overflow:hidden;font-size:12px;font-family:'\5b8b\4f53';color:#5b5b5b; background-color: #1c1c1c;}
+.wrap_ied{width:1000px;height:90px;overflow:hidden;margin:0 auto;padding-top:54px;}
+.wrap_ied p{width:1000px;overflow:hidden;text-align:center;margin-bottom:5px;}
+.wrap_ied p a{color:#5b5b5b; text-decoration: none;}
+/*page*/
+body{padding-top:42px;min-width:1000px; font: 12px/150% tahoma,'\5b8b\4f53',sans-serif;}
+body{font-family:'\5FAE\8F6F\96C5\9ED1';}
+a{text-decoration: none;}
+.hide_slh{overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+.sp{background: url("images/sp.png") no-repeat;}
+.pg_center{width: 1000px; height: 100%; position: relative; margin: 0 auto 0; overflow: hidden;}
+.header{min-width: 1000px; height: 606px; background: url("images/bg_header.jpg") 50% 0 no-repeat;}
+.even1{min-width: 1000px; height: 669px; background: url("images/bg_even1.jpg") 50% 0 no-repeat;}
+.even2{min-width: 1000px; height: 1126px; background: url("images/bg_even2.jpg") 50% 0 no-repeat;}
+
+.logo_bg{width: 657px; height: 63px; background: url("images/logo.png") no-repeat; margin: 10px auto 0;}
+.logo1{display: block; width: 170px; height: 100%; float: left;}
+.logo2{display: block; width: 185px; height: 100%; float: left; margin-left: 66px;}
+.logo3{display: block; width: 152px; height: 100%; float: left; margin-left: 83px;}
+.login_box{display: block; width: 439px; height: 32px; margin: 453px auto 0; background: rgba(0,0,0,0.3); font-size: 12px; color: #cacaca; line-height: 32px; padding: 0 20px; text-align: center;}
+.login_box a{color: #ffa73f;}
+
+.e1_btn{width: 100%; overflow: hidden; margin: 58px auto 0;}
+.e1_btn1{width: 391px; overflow: hidden; float: left; margin-left: 68px;}
+.e1_btn2{width: 294px; overflow: hidden; float: left;}
+.e1_btn3{width: 370px; overflow: hidden; float: left; margin-left: 86px;}
+.e1_btn1_pic{width: 100%; height: 403px; background: url("images/e1_btn1.png") no-repeat;}
+.e1_btn2_pic{width: 100%; height: 403px; background: url("images/e1_btn2.png") no-repeat;}
+.e1_btn3_pic{width: 100%; height: 403px; background: url("images/e1_btn3.png") no-repeat;}
+.e1_btn1 .e1_btn_tx{width: 285px; height: 32px; background: url("images/e1_tx_bg.png") no-repeat; margin: 8px 0 0 72px; text-align: center; line-height: 32px; font-size: 16px; color: #cbcbcb;}
+.e1_btn1 .btn_look{display: block; width: 229px; height: 56px; background: url("images/btn_look.png") no-repeat; margin: 10px 0 0 99px;}
+
+.e1_btn2 .e1_btn_tx{width: 285px; height: 32px; background: url("images/e1_tx_bg.png") no-repeat; margin: 8px 0 0 12px; text-align: center; line-height: 32px; font-size: 16px; color: #cbcbcb;}
+.e1_btn2 .btn_look{display: block; width: 229px; height: 56px; background: url("images/btn_look.png") no-repeat; margin: 10px 0 0 38px;}
+
+.e1_btn3 .e1_btn_tx{width: 285px; height: 32px; background: url("images/e1_tx_bg.png") no-repeat; margin: 8px 0 0 43px; text-align: center; line-height: 32px; font-size: 16px; color: #cbcbcb;}
+.e1_btn3 .btn_look{display: block; width: 229px; height: 56px; background: url("images/btn_look.png") no-repeat; margin: 10px 0 0 70px;}
+
+.e2_list{width: 100%; overflow: hidden; margin: 103px auto 0;}
+.e2_list li{width: 440px; overflow: hidden; float: left; margin-left: 40px;}
+.e2_li1 .e2_hd{width: 440px; height: 527px; background: url("images/e2_bg1.jpg") no-repeat; overflow: hidden;}
+.e2_li2 .e2_hd{width: 440px; height: 527px; background: url("images/e2_bg2.jpg") no-repeat; overflow: hidden;}
+.e2_li3 .e2_hd{width: 440px; height: 527px; background: url("images/e2_bg3.jpg") no-repeat; overflow: hidden;}
+.ph_qs{width: 100%; overflow: hidden; margin: 220px auto 0;}
+.ph_qs_1{width: 122px; height: 140px; margin: 0 auto 10px; position: relative;}
+.ph_qs_pic{width: 100px; height: 100px; position: relative; margin: 0 auto 0; border: 2px solid #865f30; border-radius: 50%;}
+.ph_qs_pic img{display: block; width: 96px; height: 96px; border-radius: 50%; border: 2px solid #191919;}
+.ph_qs_name{width: 122px; height: 26px; background-position: 0 -94px; position: absolute; top: 85px; left: 50%; margin-left: -61px; color: #202020; font-size: 14px; text-align: center; line-height: 26px; z-index: 2;}
+.ph_qs_1 .hg_icon{display: block; width: 41px; height: 39px; background-position: 0 0; position: absolute; top: -6px; left: -10px;}
+.ph_qs_2 .hg_icon{display: block; width: 41px; height: 39px; background-position: -71px 0; position: absolute; top: -6px; left: -10px;}
+.ph_qs_3 .hg_icon{display: block; width: 41px; height: 39px; background-position: -127px 0; position: absolute; top: -6px; left: -10px;}
+.ph_qs_rd{width: 100%; height: 28px; color: #b8b8b8; font-size: 16px; line-height: 28px; text-align: center; margin-top: 8px;}
+.ph_qs_rd strong{color: #f2ab03;}
+.ph_qs_2{width: 122px; height: 140px; float: left; position: relative; margin-left: 50px;}
+.ph_qs_3{width: 122px; height: 140px; float: left; position: relative; margin-left: 95px;}
+
+.ph_table{width: 100%; overflow: hidden; margin: 0 auto 0;}
+.ph_table tr{width: 100%; overflow: hidden;}
+.ph_table tr th{height: 34px; color: #b0b0b0; font-size: 14px; font-weight: bold; text-align: center; line-height: 34px; background-color: #1f1f1f;}
+.ph_table tr td{height: 50px;}
+.ph_num{display: block; width: 25px; height: 25px; color: #b8b8b8; font-size: 14px; background-color: #2b2b2b; border-radius: 50%; text-align: center; line-height: 25px; margin: 0 auto 0;}
+.ph_t_s1{width: 50px; border-right: 1px solid #242424;}
+.ph_t_s2{width: 180px; border-right: 1px solid #242424;}
+.ph_t_s3{width: 88px;}
+.ph_pic{display: block; width: 36px; height: 36px; border: 0.01rem solid #c77903; border-radius: 50%; float: left; margin: 6px 0 0 13px;}
+.ph_pic img{display: block; width: 100%; border-radius: 50%;}
+.ph_zb_name{width: 115px; height: 50px; color: #b8b8b8; font-size: 16px; float: left; margin-left: 10px; line-height: 50px;}
+.ph_zb_rd{width: 100%; height: 50px; color: #f2ab03; font-size: 16px; line-height: 50px; text-align: center;}
+.ph_table tr:nth-child(even){background-color: #191919;}
+.ph_table tr:nth-child(odd){background-color: #141414;}
+.e2_list .e2_li2{margin: 0 19px;}
+
+.no_sj_tx{width: 100%; height: 260px; line-height: 260px; color: #b8b8b8; font-size: 30px; font-weight: bold; text-align: center; text-align: center; margin-top: 200px;}
+
+
+/*body*/
+</style>
+</head>
+<body>
+    <h1 class="hid">全明星周末</h1>
+    <div class="header">
+        <div class="pg_center">
+            <div class="logo_bg">
+            	<a href="javascript:;" class="logo1" title="企鹅电竞"></a>
+            	<a href="javascript:;" class="logo2" title="绝地求生：刺激战场"></a>
+            	<a href="javascript:;" class="logo3" title="绝地求生 全军出击"></a>
+            </div>
+			<div class="login_box">
+				<!--登录前状态 Start-->
+				<p id="unlogin">亲爱的用户，请 <a href="javascript:;" id="dologin">【登录】</a></p>
+				<!--登录前状态 End-->
+				<!--登录后状态 Start-->
+				<p id="logined" style="display:none">欢迎您，<span id='login_qq_span'></span>，<a href="javascript:;" id="dologout">【注销】</a></p>
+				<!--登录后状态 End-->
+			</div>
+        </div>
+    </div>
+    <div class="even1">
+    	<div class="pg_center">
+    		<div class="e1_btn">
+    			<div class="e1_btn1">
+    				<div class="e1_btn1_pic"></div>
+    				<p class="e1_btn_tx">为主播点赞赢取丰厚礼品</p>
+    				<a href="javascript:;" class="btn_look" title="点击观看直播"></a>
+    			</div>
+    			<div class="e1_btn3">
+    				<div class="e1_btn3_pic"></div>
+    				<p class="e1_btn_tx">为主播点赞赢取丰厚礼品</p>
+    				<a href="javascript:;" class="btn_look" title="点击观看直播"></a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="even2">
+    	<div class="pg_center">
+    		<ul class="e2_list">
+    			<li class="e2_li1">
+    				<div class="e2_hd">
+    					<div class="ph_qs">
+    						<div class="ph_qs_1">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    						<div class="ph_qs_2">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    						<div class="ph_qs_3">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="ph_oth">
+    					<table class="ph_table">
+		                    <tr>
+		                        <th class="ph_t_s1">排行</th>
+		                        <th class="ph_t_s2">主播</th>
+		                        <th class="ph_t_s3">热度</th>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">4</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">5</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">6</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">7</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">8</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">9</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">10</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                </table>
+    				</div>
+    			</li>
+    			<li class="e2_li3">
+    				<div class="e2_hd">
+    					<div class="ph_qs">
+    						<div class="ph_qs_1">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    						<div class="ph_qs_2">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    						<div class="ph_qs_3">
+    							<div class="ph_qs_pic">
+    								<img src="images/e2_pic.png" alt="">
+    								<span class="hg_icon sp"></span>
+    							</div>
+    							<p class="ph_qs_name sp hide_slh">主播名称名称</p>
+    							<p class="ph_qs_rd hide_slh">热度：<strong>9999999</strong></p>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="ph_oth">
+    					<table class="ph_table">
+		                    <tr>
+		                        <th class="ph_t_s1">排行</th>
+		                        <th class="ph_t_s2">主播</th>
+		                        <th class="ph_t_s3">热度</th>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">4</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">5</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">6</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">7</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">8</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">9</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                    <tr>
+		                        <td class="ph_t_s1 hide_slh">
+		                            <span class="ph_num">10</span>
+		                        </td>
+		                        <td class="ph_t_s2">
+		                            <div class="ph_pic">
+		                                <img src="images/qs_pic3.png" alt="">
+		                            </div>
+		                            <p class="ph_zb_name hide_slh">主播名称名称</p>
+		                        </td>
+		                        <td class="ph_t_s3 hide_slh">
+		                            <p class="ph_zb_rd hide_slh">9999999</p>
+		                        </td>
+		                    </tr>
+		                </table>
+    				</div>
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+    
+<script src="http://ossweb-img.qq.com/images/js/foot.js"></script>
+<script src="http://ossweb-img.qq.com/images/js/title.js"></script>
+<script src="http://pingjs.qq.com/ping_tcss_ied.js"></script>
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script src="http://ossweb-img.qq.com/images/js/milo/milo-min.js"></script>
+<script>
+	milo.addEvent(g("dologin"), "click", function() {
+		need("biz.login-min",function(LoginManager){
+		LoginManager.init({
+				needReloadPage:true
+			});
+			LoginManager.login();
+		});
+		return false;
+	});
+	milo.addEvent(g("dologout"), "click", function() {
+		need("biz.login-min",function(LoginManager){
+			LoginManager.logout();
+		});
+		return false;
+	});
+	milo.ready(function() {
+		need("biz.login-min",function(LoginManager){
+			LoginManager.checkLogin(function(){
+				g("login_qq_span").innerText= LoginManager.getUserUin();//获取QQ号
+			});
+		});
+	});
+</script>
+<script>
+ //此段代码不能放到外链JS中，
+ var setSite = { //设置网站属性
+ siteType: "a20180123cjsd", //必填项:"os"代表是官网，如果不是，则填写actName例如a20160701xxx
+ pageType: "index", //必填项:本页面的定位；按照页面含义填写例如main||list||detail||download||share||page1||pageN
+ pageName: "首页", //必填项:页面中文名
+ osact: 0, //选填项:是否是官网专题(在官网运营的专题)boolean；默认是0；可以在链接上加入参数osact=1来灵活设置
+ ingame: 0, //选填项:是否投放在游戏APP内boolean；默认是0；可以在链接上加入参数ingame=1来灵活设置
+ stayTime: 0 //选填项:是否需要统计停留时长boolean；默认是0
+ }
+ if (typeof (pgvMain) == 'function') pgvMain();//千万不能忘记！
+</script>
+</body>
+</html>

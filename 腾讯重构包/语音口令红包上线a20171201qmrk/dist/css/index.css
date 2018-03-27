@@ -1,0 +1,127 @@
+body{width: 100%;font-size: 12px;color: #6e6d6d;background: #fa4649;}
+ul,ol{list-style-type: none;}
+body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;font-family: "Microsoft YaHei";}
+h1{display: none;}
+img{display: block;width: 100%; } 
+.hide_slh{display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.sp{background: url("../img/sp.png") no-repeat; background-size: 7.5rem;}
+.bg1{width: 7.5rem; height: 6.92rem; background: url("../img/bg1.jpg") no-repeat; background-size: 7.5rem;}
+.pg_tl{width: 6.56rem; height: 4.08rem; background: url("../img/pg_tl.png"); background-size: 6.56rem; position: absolute; top: 0.6rem; left: 0.46rem;}
+.pg_tl{-webkit-animation:rotateInUpRight 0.6s .5s ease both;}
+@-webkit-keyframes rotateInUpRight{
+	0%{-webkit-transform-origin:right bottom; -webkit-transform:rotate(-90deg); opacity:0}
+	30%{-webkit-transform-origin:right bottom; -webkit-transform:rotate(5deg); opacity:1}
+	60%{-webkit-transform-origin:right bottom; -webkit-transform:rotate(-5deg); opacity:1}
+	100%{-webkit-transform-origin:right bottom; -webkit-transform:rotate(0); opacity:1}
+}
+
+
+.bg2{width: 7.5rem; height: 7.77rem; background: url("../img/bg2.jpg") no-repeat; background-size: 7.5rem; position: relative;}
+.m1_g{width: 0.91rem; height: 0.47rem; background-position: -5.54rem -3.02rem; position: absolute; top: 2.46rem; left: 4.33rem;}
+.m1_g{-webkit-animation: m1gMove 1s 0s ease infinite;}
+@-webkit-keyframes m1gMove{
+	0%{opacity: 0;}
+	50%{opacity: 1;}
+	100%{opacity: 0;}
+}
+.yy_bg{width: 1.16rem; height: 0.47rem; background-position: -5.41rem -1.92rem; position: absolute; top: 3.83rem; left: 5.7rem;}
+.yy_bg{-webkit-animation: yy_bg 0.6s 1s ease both;}
+@-webkit-keyframes yy_bg{
+	0%{-webkit-transform: translateY(100px); opacity: 0;}
+	100%{-webkit-transform: translateY(0); opacity: 1;}
+}
+.yy_icon{width: 0.25rem; height: 0.2rem; background-position: -6.32rem -0.13rem; position: absolute; top: 0.1rem; left: 0.15rem;}
+.yy_icon{-webkit-animation: yy_icon 1s 1s ease infinite;}
+@-webkit-keyframes yy_icon{
+	0%{width: 0;}
+	100%{width: 25px;}
+}
+
+.bg3{width: 7.5rem; height: 7.79rem; background: url("../img/bg3.jpg") no-repeat; background-size: 7.5rem; position: relative;}
+.slh_icon{width: 0.5rem; height: 0.12rem; background-position: -5.49rem -2.66rem; position:absolute; top: 0.26rem; left: 4.1rem;}
+.hy_icon{width: 1.16rem; height: 0.93rem; background-position: -5.41rem -0.75rem; position:absolute; top: 2.9rem; left: 5.55rem;}
+.hy_icon{-webkit-animation: hy_icon 1s 1s ease infinite;}
+@-webkit-keyframes hy_icon{
+	0%{opacity: 0;}
+	50%{opacity: 1;}
+	100%{opacity: 0;}
+}
+.hb_1{width: 0.44rem; height: 0.44rem; position: absolute; top: 3.36rem; left: 3.98rem; background-position: -6.36rem -3.98rem;}
+.hb_2{width: 0.36rem; height: 0.44rem; position: absolute; top: 2.7rem; left: 4.34rem; background-position: -5.72rem -3.98rem;}
+.hb_3{width: 0.36rem; height: 0.44rem; position: absolute; top: 3.43rem; left: 5.2rem; background-position: -7.01rem -4.01rem;}
+.hb_peo{width: 1.31rem; height: 1.22rem; position: absolute; top: 3.1rem; left: 4.1rem; background-position: -5.41rem -4.84rem; z-index: 2;}
+.hb_1{ -webkit-animation: hbMove 1.5s 0s ease infinite;}
+.hb_2{ -webkit-animation: hbMove 2.5s 0s ease infinite;}
+.hb_3{ -webkit-animation: hbMove 2s 0s ease infinite;}
+@-webkit-keyframes hbMove{
+	0%{-webkit-transform: translateY(-20px); opacity: 1;}
+	100%{-webkit-transform: translateY(20px); opacity: 0;}
+}
+
+
+
+.bg4{width: 7.5rem; height: 5.04rem; background: url("../img/bg4.jpg") no-repeat; background-size: 7.5rem; position: relative;}
+.btn_fhb{display: block; width: 5.76rem; height: 2.34rem; background: url("../img/btn_fhb.png") no-repeat; background-size: 5.76rem; position: absolute; top: 0px; left: 0.85rem;}
+.btn_fhb{-webkit-animation: btnMove 2s 0s ease infinite;}
+@-webkit-keyframes btnMove{
+	0%{-webkit-transform: scale(1.06);}
+	50%{-webkit-transform: scale(1);}
+	100%{-webkit-transform: scale(1.06);;}
+}
+
+.bg5{width: 7.5rem; height: 11.66rem; background: url("../img/bg5.jpg") no-repeat; background-size: 7.5rem; position: relative; overflow: hidden;}
+.e4_ts{width: 3.2rem; height: 0.5rem; color: #fff; font-size: 0.17rem; margin: 0rem auto 0; text-align: center; line-height: 0.23rem; padding-top: 2.6rem;}
+.e5_tx_list{width: 5.25rem; overflow: hidden; float: left; margin: 0 0.25rem 0 0.75rem;}
+.e5_tx_list li{width: 100%; height: 0.75rem; overflow: hidden; text-align: center; line-height: 0.73rem; font-size: 0.26rem; color: #000000; margin-bottom: 0.12rem;}
+.e5_li1{background-position: 0 0;}
+.e5_li2{background-position: 0 -0.88rem;}
+.e5_li3{background-position: 0 -1.7rem;}
+.e5_li4{background-position: 0 -2.56rem;}
+.e5_li5{background-position: 0 -1.7rem;}
+.e5_li6{background-position: 0 -4.3rem;}
+
+.e5_btn_box{width: 0.45rem; overflow: hidden; float: left;}
+.e5_btn_box li{width: 100%; height: 0.75rem;}
+.e5_btn_box a{display: block; width: 0.45rem; height: 0.53rem; background-position: -5.4rem 0; margin-top: 0.12rem;}
+
+.share_box{width: 100%; height: 2.4rem; float: left; margin: 0.56rem auto 0; overflow: hidden;}
+.share_no{width: 100%; overflow: hidden;}
+.share_no_pic{width: 5.92rem; height: 1.69rem; background: url("../img/share_no.png") no-repeat; background-size: 5.92rem; margin: 0.3rem auto 0;}
+.share_no_text{width: 3.65rem; height: 0.28rem; float: left; text-align: right; color: #fff; font-size: 0.22rem; line-height: 0.28rem;}
+.share_no_text2{width: 3.47rem; height: 0.28rem; float: right; text-align: left; color: #fff; font-size: 0.22rem; line-height: 0.28rem;}
+.share_no_text span{display: inline-block; width: 0.08rem; height: 0.08rem; background-color: #000; border-radius: 50%; vertical-align: middle; overflow: hidden; margin-right: 0.05rem;}
+.share_no_text2 span{display: inline-block; width: 0.08rem; height: 0.08rem; background-color: #000; border-radius: 50%; vertical-align: middle; overflow: hidden; margin-left: 0.05rem; }
+.share_open{width: 6.17rem; height: 2.07rem; background: url("../img/share_open.png") no-repeat; background-size: 6.17rem; margin: 0 auto 0; overflow: hidden;}
+.share_tx_list{width: 4.8rem; overflow: hidden; float: left; margin: 0.45rem 0.3rem 0 0.38rem; }
+.share_tx_list li{width: 4.75rem; height: 0.4rem; overflow: hidden; text-align: center; line-height: 0.4rem; font-size: 0.25rem; color: #ffffff; margin-bottom: 0.2rem; background-color: #de2424; border-radius: 0.5rem; border: 0.02rem solid #000;}
+
+.share_btn_list{width: 0.45rem; overflow: hidden; float: left; margin: 0.3rem 0 0 0rem; }
+.share_btn_list li{width: 100%; height: 0.55rem;}
+.share_btn_list a{display: block; width: 0.45rem; height: 0.53rem; background-position: -5.4rem 0; margin-top: 0.12rem;}
+
+.btn_share{display: block; width: 3.4rem; height: 1.02rem; background-position: 0 -5.49rem; margin: 0 auto 0; clear: both;}
+
+.btn_share{-webkit-animation: btnMove 2s 0s ease infinite;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

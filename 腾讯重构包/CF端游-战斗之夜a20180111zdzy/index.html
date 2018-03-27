@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN"  data-use-rem="750">
+<head>
+  <meta charset="gbk">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="HandheldFriendly" content="true">
+  <title>绝地求生 全军出击</title>
+</head>
+<style>
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,
+    details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+    table{border-collapse:collapse;border-spacing:0}
+    audio,canvas,video { display: inline-block;*display: inline;*zoom: 1;}
+    fieldset,img{border:0}
+    address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+    ol,ul{list-style:none}
+    caption,th{text-align:left}
+    h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+    q:before,q:after{content:''}
+    abbr,acronym{border:0;font-variant:normal}
+    sup{vertical-align:text-top}
+    sub{vertical-align:text-bottom}
+    input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+    input,textarea,select{*font-size:100%}
+    body{font-family:'\5FAE\8F6F\96C5\9ED1';}
+    a{text-decoration: none;}
+    body{background-color: #291d12;}
+    .hide_slh{overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+    .sp{background: url("images/sp.png") no-repeat; background-size: 6.4rem;}
+    .header{width: 6.4rem; height: 5.77rem; background: url("images/header.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .even1{width: 6.4rem; height: 6.16rem; background: url("images/even1.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .even2{width: 6.4rem; height: 7.22rem; background: url("images/even2.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .even3{width: 6.4rem; height: 4.29rem; background: url("images/even3.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .even4{width: 6.4rem; height: 8.09rem; background: url("images/even4.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .even5{width: 6.4rem; min-height: 5.71rem; background: url("images/even5.jpg") no-repeat; background-size: 6.4rem; overflow: hidden; position: relative;}
+    .e1_video{width: 5rem; height: 2.8rem; border: 0.02rem solid #f2bb68; margin: 1.2rem auto 0; background-color: #1c0b04;}
+    .video{width: 100%; height: 100%;}
+    .btn_gz{display: block; width: 2.5rem; height: 0.79rem; background-position: 0 0; margin: 0.33rem auto 0;}
+    .phb_qs{width: 4.92rem; height: 2.03rem; margin: 1.2rem auto 0; overflow: hidden;}
+    .phb_qs_2{width: 1.31rem; height: 1.31rem; float: left; margin: 0.65rem 0 0 0; position: relative; border: 0.03rem solid #dab376; border-radius: 50%;}
+    .phb_qs_2_jb{display: block; width: 0.43rem; height: 0.38rem; position: absolute; top: -0.18rem; left: 0; background-position: -0.03rem -1.36rem;}
+    .phb_qs_2 img{display: block; width: 100%; height: 100%; border-radius: 50%;}
+
+    .phb_qs_1{width: 1.58rem; height: 1.58rem; float: left; margin: 0.26rem 0.27rem 0; position: relative; border: 0.03rem solid #dab376; border-radius: 50%;}
+    .phb_qs_1_jb{display: block; width: 0.55rem; height: 0.56rem; position: absolute; top: -0.28rem; left: 0; background-position: -0.84rem -1.18rem;}
+    .phb_qs_1 img{display: block; width: 100%; height: 100%; border-radius: 50%;}
+    .phb_qs_3_jb{display: block; width: 0.55rem; height: 0.56rem; position: absolute; top: -0.18rem; left: 0; background-position: -1.72rem -1.31rem;}
+    .e2_phb_box{width: 5rem; height: 2.7rem; margin: 0.28rem auto 0; overflow: hidden;}
+    .phb_tl{width: 100%; height: 0.46rem; background-color: #f7cc89; overflow: hidden; font-size: 0.22rem; color: #403026; font-weight: bold; text-align: center; line-height: 0.46rem;}
+    .phb_s1{display: block; width: 0.96rem; height: 100%; float: left;}
+    .phb_s2{display: block; width: 1.58rem; height: 100%; float: left;}
+    .phb_s3{display: block; width: 1.05rem; height: 100%; float: left;}
+    .phb_s4{display: block; width: 1.4rem; height: 100%; float: left;}
+    .phb_list_ct{width: 100%; min-height: 2.24rem; background:-webkit-gradient(linear, 0 0, 0 bottom, from(#20140b), to(#352516)); overflow: hidden;}
+    .phb_list{width: 100%; height: 1.86rem; margin: 0.16rem auto 0; overflow: hidden;}
+    .phb_list li{width: 100%; height: 0.36rem; overflow: hidden; font-size: 0.2rem; color: #f3ca8d; line-height: 0.36rem; text-align: center;}
+    .phb_num{display: block; width: 0.22rem; height: 0.22rem; text-align: center; line-height: 0.22rem; font-size: 0.2rem; margin: 0.09rem auto 0; background-color: #f7cc89; color: #392a21; border-radius: 50%;}
+
+    .gz_box{width: 5.7rem; height: 1.57rem; margin: 1.45rem auto 0; overflow: hidden;}
+    .gz_pic{width: 2.77rem; height: 1.57rem; float: left; margin-right: 0.2rem;}
+    .gz_pic img{display: block; width: 100%; height: 100%;}
+    .gz_ct{width: 2.7rem; height: 1.57rem; float: right;}
+    .gz_ct_tl{width: 2.44rem; height: 0.34rem; background: url("images/gz_ct_tl.png") no-repeat; background-size: 2.44rem; margin-top: 0.12rem;}
+    .gz_ct_tx{width: 100%; color: #b5a594; font-size: 0.22rem; line-height: 0.5rem; overflow: hidden;}
+    .gz_ct_btn{width: 100%; height: 0.48rem; overflow: hidden;}
+    .btn_gzu{display: block; width: 1.31rem; height: 0.48rem; float: left; background-position: 0 -2.24rem; margin-right: 0.05rem;}
+    .btn_lj{display: block; width: 1.31rem; height: 0.48rem; float: left; background-position: -1.37rem -2.24rem;}
+    
+    .e4_cont{width: 6.04rem; height: 4.35rem; margin: 1.3rem auto 0; overflow: hidden;}
+    .e4_fl_tl{width: 100%; height: 0.72rem; overflow: hidden; background-color: #ffd081; color: #402e1e; font-size: 0.28rem; font-weight: bold; text-align: center; line-height: 0.72rem;}
+    .fl_list{width: 100%; overflow: hidden; background:-webkit-gradient(linear, 0 0, 0 bottom, from(#1e0c00), to(#372514));}
+    .fl_list li{width: 100%; height: 0.36rem; overflow: hidden; padding: 0.12rem 0; border-bottom: 1px solid #3d2911; font-size: 0.2rem; color: #ffd081; text-align: center;}
+    .fl_s1{width: 1.2rem; height: 100%; float: left; display: flex; align-items: center; justify-content: center;}
+    .fl_s2{width: 1.58rem; height: 100%; float: left; display: flex; align-items: center; justify-content: center;}
+    .fl_s3{width: 3.23rem; height: 100%; float: left; display: flex; align-items: center; justify-content: center;}
+    .e4_tj{width: 6.04rem; overflow: hidden; margin: 0.3rem auto 0;}
+    .e4_tj_tl{width: 1.66rem; height: 0.46rem; background: url("images/e4_tj_tl.png") no-repeat; background-size: 1.66rem;}
+    .e4_tj_list{width: 100%; overflow: hidden;}
+    .e4_tj_list li{width: 100%; color: #f3ca8d; font-size: 0.2rem; line-height: 0.36rem;}
+    
+    .e5_cont{width: 6.04rem; overflow: hidden; margin: 0 auto 0;}
+    .e5_rule_tl{width: 3.11rem; height: 0.46rem; background: url("images/e5_rule_tl.png") no-repeat; background-size: 3.11rem; margin-top: 1.36rem;}
+    .rule_list{width: 100%; overflow: hidden; padding-bottom: 0.3rem; margin-top: 0.1rem;}
+    .rule_list li{width: 100%; color: #f3ca8d; font-size: 0.22rem; line-height: 0.32rem;}
+    .rule_s1{display: block; width: 0.3rem; float: left;}
+    .rule_s2{display: block; width: 5.7rem; float: left;}
+
+    .lk_tx{width: 100%; height: 0.7rem; color: #ffffff; font-size: 0.2rem; text-align: center; line-height: 0.7rem; background-color: #1d0c03;}
+    
+    /*弹窗*/
+    .tc_bg{width: 100%; height: 100%; background: rgba(0,0,0,0.6); position: fixed; top: 0; left: 0; z-index: 999;}
+    .tc_gz{width: 6.1rem; height: 4.55rem; background: url("images/tc_gz_bg.jpg") no-repeat; background-size: 6.1rem; position: absolute; top: 50%; left: 50%; margin: -2.77rem 0 0 -3.05rem; overflow: hidden;}
+    .tc_gz_list{width: 5.6rem; height: 2.52rem; margin: 0.3rem auto 0;}
+    .tc_gz_list li{width: 1.1rem; height: 1.1rem; border: 0.02rem solid #d9b37e; float: left; margin: 0 0 0.22rem 0.22rem; border-radius: 50%; position: relative; overflow: hidden;}
+    .tc_gz_list li img{display: block; width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; border-radius: 50%;}
+    .tc_gz_list li:after{content: ""; display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0,0,0,0.5);}
+    .tc_gz_list .on:after{content: ""; display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0; background: rgba(0,0,0,0);}
+    .tc_gz_xz{width: 100%; height: 0.37rem; margin: 0.25rem auto 0; overflow: hidden; display: flex; align-items: center; justify-content: center;}
+    .tc_change{display: block; width: 1.28rem; height: 0.37rem; text-align: center; color: #ffd081; font-size: 0.24rem; line-height: 0.37rem; position: relative; margin-right: 0.23rem;}
+    .tc_change:after{content: ""; display: block; width: 0.23rem; height: 0.2rem; background: url("images/sp.png") -2.86rem -0.89rem no-repeat; background-size: 6.4rem; position: absolute; top: 0.09rem; right: 0;}
+    .tc_int_zq{display: block; width: 1.46rem; height: 0.37rem; text-align: center; color: #ffd081; font-size: 0.24rem; line-height: 0.37rem; position: relative;}
+    .tc_int_zq:before{content: ""; display: block; width: 0.02rem; height: 0.37rem; background-color: #564234; position: absolute; top: 0; left: 0;}
+    .tc_btn{width: 3.62rem; height: 0.56rem; margin: 0.2rem auto 0; overflow: hidden;}
+    .btn_tc_gz{display: block; width: 1.68rem; height: 0.56rem; background-position: -2.73rem 0; float: left;}
+    .btn_tc_out{display: block; width: 1.68rem; height: 0.56rem; background-position: -4.66rem 0; float: right;}
+
+
+
+</style>
+<body>
+    <div class="header"></div>
+    <div class="even1">
+        <div class="e1_video">
+            <div id="mod_player" class="video"></div>
+        </div>
+        <a href="javascript:;" class="btn_gz sp"></a>
+    </div>
+    <div class="even2">
+        <div class="phb_qs">
+            <div class="phb_qs_2">
+                <span class="phb_qs_2_jb sp"></span>
+                <img src="images/phb_pic.jpg" alt="">
+            </div>
+            <div class="phb_qs_1">
+                <span class="phb_qs_1_jb sp"></span>
+                <img src="images/phb_pic.jpg" alt="">
+            </div>
+            <div class="phb_qs_2">
+                <span class="phb_qs_3_jb sp"></span>
+                <img src="images/phb_pic.jpg" alt="">
+            </div>
+        </div>
+        <div class="e2_phb_box">
+            <div class="phb_tl">
+                <p class="phb_s1 hide_slh">排名</p>
+                <p class="phb_s2 hide_slh">主播</p>
+                <p class="phb_s3 hide_slh">击杀数</p>
+                <p class="phb_s4 hide_slh">房间号</p>
+            </div>
+            <div class="phb_list_ct">
+                <ul class="phb_list">
+                    <li>
+                        <p class="phb_s1">
+                            <span class="phb_num">4</span>
+                        </p>
+                        <p class="phb_s2 hide_slh">企鹅电竞xxx</p>
+                        <p class="phb_s3 hide_slh">11</p>
+                        <p class="phb_s4 hide_slh">123456</p>
+                    </li>
+                    <li>
+                        <p class="phb_s1">
+                            <span class="phb_num">5</span>
+                        </p>
+                        <p class="phb_s2 hide_slh">企鹅电竞xxx</p>
+                        <p class="phb_s3 hide_slh">11</p>
+                        <p class="phb_s4 hide_slh">123456</p>
+                    </li>
+                    <li>
+                        <p class="phb_s1">
+                            <span class="phb_num">6</span>
+                        </p>
+                        <p class="phb_s2 hide_slh">企鹅电竞xxx</p>
+                        <p class="phb_s3 hide_slh">11</p>
+                        <p class="phb_s4 hide_slh">123456</p>
+                    </li>
+                    <li>
+                        <p class="phb_s1">
+                            <span class="phb_num">7</span>
+                        </p>
+                        <p class="phb_s2 hide_slh">企鹅电竞xxx</p>
+                        <p class="phb_s3 hide_slh">11</p>
+                        <p class="phb_s4 hide_slh">123456</p>
+                    </li>
+                    <li>
+                        <p class="phb_s1">
+                            <span class="phb_num">8</span>
+                        </p>
+                        <p class="phb_s2 hide_slh">企鹅电竞xxx</p>
+                        <p class="phb_s3 hide_slh">11</p>
+                        <p class="phb_s4 hide_slh">123456</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="even3">
+        <div class="gz_box">
+            <div class="gz_pic">
+                <img src="images/gz_pic.png" alt="">
+            </div>
+            <div class="gz_ct">
+                <p class="gz_ct_tl"></p>
+                <p class="gz_ct_tx">关注3位主播即可领奖</p>
+                <div class="gz_ct_btn">
+                    <a href="javascript:showBox('tc_gz');" class="btn_gzu sp"></a>
+                    <a href="javascript:;" class="btn_lj sp"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="even4">
+        <div class="e4_cont">
+            <div class="e4_fl_tl">
+                <p class="fl_s1 hide_slh">名次</p>
+                <p class="fl_s2 hide_slh">Q币奖励</p>
+                <p class="fl_s3 hide_slh">游戏福利</p>
+            </div>
+            <ul class="fl_list">
+                <li>
+                    <p class="fl_s1">1</p>
+                    <p class="fl_s2">800</p>
+                    <p class="fl_s3">王者之心(30天)、王者之魂(30天)<br />王者之魄(30天)、100000CF点券</p>
+                </li>
+                <li>
+                    <p class="fl_s1">2</p>
+                    <p class="fl_s2">500</p>
+                    <p class="fl_s3">王者之魄(30天)、王者之心(30天)<br />50000CF点券</p>
+                </li>
+                <li>
+                    <p class="fl_s1">3</p>
+                    <p class="fl_s2">300</p>
+                    <p class="fl_s3">王者之魄(30天)、30000CF点券</p>
+                </li>
+                <li>
+                    <p class="fl_s1">4-10</p>
+                    <p class="fl_s2">/</p>
+                    <p class="fl_s3">20000CF点券</p>
+                </li>
+                <li>
+                    <p class="fl_s1">11-20</p>
+                    <p class="fl_s2">/</p>
+                    <p class="fl_s3">15000CF点券</p>
+                </li>
+                <li>
+                    <p class="fl_s1">21-30</p>
+                    <p class="fl_s2">/</p>
+                    <p class="fl_s3">10000CF点券</p>
+                </li>
+            </ul>
+        </div>
+        <div class="e4_tj">
+            <p class="e4_tj_tl"></p>
+            <ul class="e4_tj_list">
+                <li>1.在规定时间内直播时长满2小时(每周六晚19:00-22:00)</li>
+                <li>2.根据规定直播时间内的击杀数排名，前30名主播获得奖励</li>
+            </ul>
+        </div>
+    </div>
+    <div class="even5">
+        <div class="e5_cont">
+            <p class="e5_rule_tl"></p>
+            <ul class="rule_list">
+                <li>
+                    <span class="rule_s1">1、</span>
+                    <span class="rule_s2">活动时间：2018年1月20日-3月20日 每周六晚19：00-22：00</span>
+                </li>
+                <li>
+                    <span class="rule_s1">2、</span>
+                    <span class="rule_s2">参加战斗之夜主播，需先参加“吃鸡王周榜活动”QQ群：667888199</span>
+                </li>
+                <li>
+                    <span class="rule_s1">3、</span>
+                    <span class="rule_s2">每周在“吃鸡王周榜活动”排名前50的主播，可参加次周六19：00-22：00进行的战斗之夜活动。</span>
+                </li>
+                <li>
+                    <span class="rule_s1">4、</span>
+                    <span class="rule_s2">该活动仅限于企鹅电竞主播，发现多平台直播的主播将取消活动资格；</span>
+                </li>
+                <li>
+                    <span class="rule_s1">5、</span>
+                    <span class="rule_s2">恶意黑屏挂直播时长将取消活动资格；</span>
+                </li>
+                <li>
+                    <span class="rule_s1">6、</span>
+                    <span class="rule_s2">直播期间禁止挂机录像转播其它平台，以及其它违反直播平台规定的行为；</span>
+                </li>
+                <li>
+                    <span class="rule_s1">7、</span>
+                    <span class="rule_s2">该排行榜最终解释权归企鹅电竞所有。</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <p class="lk_tx">腾讯公司保留在法律规定的范围内对上述规则进行解释的权利</p>
+    <!-- 弹窗 S -->
+    <div class="tc_bg" id="tc_gz" style="display:none">
+        <div class="tc_gz">
+            <ul class="tc_gz_list" id="tcGzList">
+                <li class="on">
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+                <li>
+                    <img src="images/phb_pic.jpg" alt="">
+                </li>
+            </ul>
+            <div class="tc_gz_xz">
+                <a href="javascript:;" class="tc_change">换一批</a>
+                <a href="javascript:;" class="tc_int_zq">进入专区</a>
+            </div>
+            <div class="tc_btn">
+                <a href="javascript:;" class="btn_tc_gz sp"></a>
+                <a href="javascript:hideBox('tc_gz');" class="btn_tc_out sp"></a>
+            </div>
+        </div>
+    </div>
+    <!-- 弹窗 E -->
+
+<script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+<script src="http://imgcache.qq.com/tencentvideo_v1/tvp/js/tvp.player_v2.js"></script>
+<script> 
+//屏幕适应 
+    (function (win, doc) {
+        if (!win.addEventListener) return;
+        var html = document.documentElement;
+        function setFont() {
+            var html = document.documentElement;
+            var k = 640;
+            html.style.fontSize = html.clientWidth / k * 100 + "px";
+        }
+        setFont();
+        setTimeout(function () {
+            setFont();
+        }, 300);
+        doc.addEventListener('DOMContentLoaded', setFont, false);
+        win.addEventListener('resize', setFont, false);
+        win.addEventListener('load', setFont, false);
+    })(window, document);
+
+    var video = new tvp.VideoInfo();
+    video.setVid("i001216370f");
+    var player = new tvp.Player();
+    player.create({
+        width: "100%",
+        height: "100%",
+        video: video,
+        modId: "mod_player",
+        pic: "http://ossweb-img.qq.com/images/roco/act/a20120925movie/video_pic.jpg",        //视频封面地址
+        vodFlashSkin: "http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",  //精简皮肤        
+        autoplay: true   //是否自动播放
+    });
+
+    var tcGzList = document.getElementById("tcGzList");
+    var tcGzListLi = tcGzList.getElementsByTagName("li");
+    for(var i=0; i<tcGzListLi.length; i++){
+        tcGzListLi[i].index = i;
+        tcGzListLi[i].onclick = function(){
+            if(tcGzListLi[this.index].className == "on"){
+                tcGzListLi[this.index].className = "";
+            }else{
+                tcGzListLi[this.index].className = "on";
+            }
+        }
+    }
+
+
+    function showBox(box){
+        var box = document.getElementById(box);
+        box.style.display = "block";
+    }
+    function hideBox(box){
+        var box = document.getElementById(box);
+        box.style.display = "none";
+    }
+
+</script>
+<script>
+    //此段代码不能放到外链JS中，
+    var setSite={ //设置网站属性
+     siteType:"a20180111zdzy", //必填项:"os"代表是官网，如果不是，则填写actName例如a20160701xxx
+     pageType:"index", //必填项:本页面的定位；按照页面含义填写例如main||list||detail||download||share||page1||pageN
+     pageName:"首页", //必填项:页面中文名
+     osact:0, //选填项:是否是官网专题(在官网运营的专题)boolean；默认是0；可以在链接上加入参数osact=1来灵活设置
+     ingame:0, //选填项:是否投放在游戏APP内boolean；默认是0；可以在链接上加入参数ingame=1来灵活设置
+     stayTime:0 //选填项:是否需要统计停留时长boolean；默认是0
+    }
+    if(typeof(pgvMain)=='function')pgvMain();//千万不能忘记！
+</script>
+</body>
+</html>
